@@ -116,13 +116,26 @@ pipeline {
             }
         }
     }
-    post{
-        success{
-            archiveArtifacts artifacts: '*.xml', followSymlinks: false
-            build job: "Wonderlust-CD", parameters: [
-                string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
-                string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
-            ]
-        }
+    post {
+    success {
+        echo "SUCCESS BLOCK STARTED"
+
+        archiveArtifacts artifacts: '*.xml',
+                         allowEmptyArchive: true,
+                         followSymlinks: false
+
+        echo "Triggering CD Job"
+
+        build job: 'Wanderlust-CD',
+              parameters: [
+                  string(name: 'FRONTEND_DOCKER_TAG', value: params.FRONTEND_DOCKER_TAG),
+                  string(name: 'BACKEND_DOCKER_TAG', value: params.BACKEND_DOCKER_TAG)
+              ]
     }
+
+    failure {
+        echo "PIPELINE FAILED"
+    }
+}
+
 }
