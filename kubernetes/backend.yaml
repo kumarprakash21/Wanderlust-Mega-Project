@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: backend
-          image: prakashgautam1998/wanderlust-backend:25
+          image: prakashgautam1998/wanderlust-backend:26
           envFrom:
             - secretRef:
                 name: wanderlust-backend:23
