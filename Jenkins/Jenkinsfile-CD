@@ -32,7 +32,7 @@ pipeline {
         }
         
         
-        stage("Update: Kubernetes manifests"){
+        stage("Update: Kubernetes Manifests"){
             steps{
                 script{
                     dir('kubernetes'){
