@@ -52,10 +52,10 @@ pipeline {
         stage('Generate: Docker Image Tag') {
             steps {
                 script{
-                    env.IMAGE_TAG = sh(
-                        script: 'git rev-parse --short=12 HEAD',
-                        returnStdout: true
-                    ).trim()
+                    def upstreamCauses = currentBuild.getBuildCauses('hudson.model.Cause$UpstreamCause')
+                    env.IMAGE_TAG = upstreamCauses
+                        ? upstreamCauses[0].upstreamBuild.toString()
+                        : env.BUILD_NUMBER
                     echo "Using generated image tag: ${env.IMAGE_TAG}"
                 }
             }
@@ -85,14 +85,16 @@ pipeline {
                         echo "Checking repository status: "
                         git status
                     
-                        echo "Adding changes to git: "
-                        git add .
-                        
-                        echo "Commiting changes: "
-                        git commit -m "chore(deploy): update image tag [skip ci]"
-                        
-                        echo "Pushing changes to github: "
-                        git push origin main
+                        echo "Checking for manifest changes: "
+                        git add kubernetes/backend.yaml kubernetes/frontend.yaml
+
+                        if git diff --cached --quiet; then
+                            echo "Image tag is already current; nothing to commit."
+                        else
+                            echo "Committing and pushing manifest changes: "
+                            git commit -m "chore(deploy): update image tag [skip ci]"
+                            git push origin main
+                        fi
                     '''
                     }
                 }
