@@ -25,7 +25,7 @@ spec:
           image: prakashgautam1998/wanderlust-backend:26
           envFrom:
             - secretRef:
-                name: wanderlust-backend:23
+                name: wanderlust-backend-secrets
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
