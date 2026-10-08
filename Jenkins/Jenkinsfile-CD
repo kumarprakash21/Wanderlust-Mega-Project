@@ -66,11 +66,11 @@ pipeline {
             steps{
                 script{
                     dir('kubernetes'){
-                        sh "sed -i -E 's#(wanderlust-backend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' backend.yaml"
+                        sh "sed -i -E 's#(image: .*/wanderlust-backend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' backend.yaml"
                     }
                     
                     dir('kubernetes'){
-                        sh "sed -i -E 's#(wanderlust-frontend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' frontend.yaml"
+                        sh "sed -i -E 's#(image: .*/wanderlust-frontend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' frontend.yaml"
                     }
                     
                 }

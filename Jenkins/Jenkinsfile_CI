@@ -28,29 +28,8 @@ pipeline {
             }
         }
 
-        stage('Check: Relevant Changes') {
-            steps {
-                script {
-                    def changedFiles = sh(
-                        script: 'git diff-tree --no-commit-id --name-only -r HEAD',
-                        returnStdout: true
-                    ).trim().readLines()
-
-                    def relevantChange = changedFiles.any { file ->
-                        file ==~ /^(backend|frontend)\/.*$/ ||
-                        file in ['package.json', 'package-lock.json', 'Jenkins/Jenkinsfile_CI']
-                    }
-
-                    echo "Changed files: ${changedFiles.join(', ')}"
-                    if (!relevantChange) {
-                        currentBuild.result = 'NOT_BUILT'
-                        error('Skipping CI: no backend, frontend, dependency, or CI pipeline changes detected.')
-                    }
-                }
-            }
-        }
-        
         stage("Trivy: Filesystem scan"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                     trivy_scan()
@@ -59,6 +38,7 @@ pipeline {
         }
 
         stage("OWASP: Dependency check"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                     owasp_dependency()
@@ -67,6 +47,7 @@ pipeline {
         }
 
         stage("Dependency: Audit") {
+            when { expression { env.SKIP_CI != 'true' } }
             steps {
                 sh '''
                     docker run --rm \
@@ -81,6 +62,7 @@ pipeline {
         }
         
         stage("SonarQube: Code Analysis"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                     sonarqube_analysis("Sonar","wanderlust","wanderlust")
@@ -89,6 +71,7 @@ pipeline {
         }
         
         stage("SonarQube: Code Quality Gates"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                     sonarqube_code_quality()
@@ -97,6 +80,7 @@ pipeline {
         }
         
         stage('Exporting environment variables') {
+            when { expression { env.SKIP_CI != 'true' } }
             parallel{
                 stage("Backend env setup"){
                     steps {
@@ -121,6 +105,7 @@ pipeline {
         }
         
         stage("Docker: Build Images"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                         dir('backend'){
@@ -135,6 +120,7 @@ pipeline {
         }
         
         stage("Docker: Push to DockerHub"){
+            when { expression { env.SKIP_CI != 'true' } }
             steps{
                 script{
                     docker_push("${env.Docker_Hub_user}","wanderlust-backend","${env.IMAGE_TAG}")
