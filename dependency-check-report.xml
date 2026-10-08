@@ -1,0 +1,1365 @@
+<?xml version="1.0"?><analysis xmlns="https://jeremylong.github.io/DependencyCheck/dependency-check.4.0.xsd"><scanInfo><engineVersion>10.0.3</engineVersion><dataSource><name>NVD API Last Checked</name><timestamp>2026-10-08T07:00:28Z</timestamp></dataSource><dataSource><name>NVD API Last Modified</name><timestamp>2026-10-08T06:16:47Z</timestamp></dataSource><analysisExceptions><exception><message>org.owasp.dependencycheck.analyzer.exception.AnalysisException: Invalid credentials provided for OSS Index</message><stackTrace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.analyzeDependency(OssIndexAnalyzer.java:143)</trace><trace>org.owasp.dependencycheck.analyzer.AbstractAnalyzer.analyze(AbstractAnalyzer.java:131)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:88)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:37)</trace><trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)</trace><trace>java.base/java.lang.Thread.run(Thread.java:1583)</trace></stackTrace><cause><message>org.sonatype.ossindex.service.client.transport.Transport$TransportException: Unexpected response; status: 401</message><stackTrace><trace>org.sonatype.ossindex.service.client.transport.HttpUrlConnectionTransport.post(HttpUrlConnectionTransport.java:106)</trace><trace>org.sonatype.ossindex.service.client.internal.OssindexClientImpl.doRequestComponentReports(OssindexClientImpl.java:204)</trace><trace>org.sonatype.ossindex.service.client.internal.OssindexClientImpl.requestComponentReports(OssindexClientImpl.java:170)</trace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.requestReports(OssIndexAnalyzer.java:230)</trace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.analyzeDependency(OssIndexAnalyzer.java:136)</trace><trace>org.owasp.dependencycheck.analyzer.AbstractAnalyzer.analyze(AbstractAnalyzer.java:131)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:88)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:37)</trace><trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)</trace><trace>java.base/java.lang.Thread.run(Thread.java:1583)</trace></stackTrace></cause></exception><exception><message>org.owasp.dependencycheck.analyzer.exception.AnalysisException: Invalid credentials provided for OSS Index</message><stackTrace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.analyzeDependency(OssIndexAnalyzer.java:143)</trace><trace>org.owasp.dependencycheck.analyzer.AbstractAnalyzer.analyze(AbstractAnalyzer.java:131)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:88)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:37)</trace><trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)</trace><trace>java.base/java.lang.Thread.run(Thread.java:1583)</trace></stackTrace><cause><message>org.sonatype.ossindex.service.client.transport.Transport$TransportException: Unexpected response; status: 401</message><stackTrace><trace>org.sonatype.ossindex.service.client.transport.HttpUrlConnectionTransport.post(HttpUrlConnectionTransport.java:106)</trace><trace>org.sonatype.ossindex.service.client.internal.OssindexClientImpl.doRequestComponentReports(OssindexClientImpl.java:204)</trace><trace>org.sonatype.ossindex.service.client.internal.OssindexClientImpl.requestComponentReports(OssindexClientImpl.java:170)</trace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.requestReports(OssIndexAnalyzer.java:230)</trace><trace>org.owasp.dependencycheck.analyzer.OssIndexAnalyzer.analyzeDependency(OssIndexAnalyzer.java:136)</trace><trace>org.owasp.dependencycheck.analyzer.AbstractAnalyzer.analyze(AbstractAnalyzer.java:131)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:88)</trace><trace>org.owasp.dependencycheck.AnalysisTask.call(AnalysisTask.java:37)</trace><trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)</trace><trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)</trace><trace>java.base/java.lang.Thread.run(Thread.java:1583)</trace></stackTrace></cause></exception></analysisExceptions></scanInfo><projectInfo><name>Wanderlust-CD #21</name><reportDate>2026-10-08T10:36:01.003363407Z</reportDate><credits>This product uses the NVD API but is not endorsed or certified by the NVD. This report contains data retrieved from the National Vulnerability Database: https://nvd.nist.gov, Github Advisory Database (via NPM Audit API): https://github.com/advisories/, and the RetireJS community.</credits></projectInfo><dependencies><dependency isVirtual="true"><fileName>@babel/core:7.23.3</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?@babel/core</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/core</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/core</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.3</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fcore@7.23.3</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-4x5r-pxfx-6jf8</name><severity unscored="true">low</severity><cvssV3><baseScore>3.200000047683716</baseScore><attackVector>LOCAL</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>CHANGED</scope><confidentialityImpact>LOW</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>LOW</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-22</cwe><cwe>CWE-200</cwe></cwes><description>## Impact
+
+Using `@babel/core` to compile maliciously crafted code can allow ab attacker to read any source map from the system that is running Babel, if these conditions are _all_ true:
+- the attacker controls the input source code
+- the attacker can read the output source code
+- the attacker knows the path of the source map file that they want to read
+
+**Users that only compile trusted code are not impacted.**
+
+## Patches
+
+The vulnerability has been fixed in `@babel/core@7.29.6` and `@babel/core@8.0.0-rc.6`.
+
+## Workarounds
+
+Callers can mitigate the issue without upgrading by setting [`inputSourceMap: false`](https://babeljs.io/docs/options#inputsourcemap) in their Babel options.
+
+Callers can also manually extract the `#sourceMappingURL` comment from the input source code, validate whether the source map that it links to is allowed to be read, and if it is pass an object to `inputSourceMap` (passing `false` when it&apos;s not).
+
+## Credits
+
+Thanks Teodor-Cristian Radoi for reporting the vulnerability.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-4x5r-pxfx-6jf8</url><name>https://github.com/babel/babel/security/advisories/GHSA-4x5r-pxfx-6jf8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-4x5r-pxfx-6jf8</url><name>https://github.com/advisories/GHSA-4x5r-pxfx-6jf8</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-49356</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-49356</name></reference><reference><source>NPM Advisory reference: </source><url>https://babeljs.io/docs/options#inputsourcemap</url><name>https://babeljs.io/docs/options#inputsourcemap</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/core:\&lt;\=7.29.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@babel/core:7.23.6</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?@babel/core</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/core</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/core</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.6</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fcore@7.23.6</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-4x5r-pxfx-6jf8</name><severity unscored="true">low</severity><cvssV3><baseScore>3.200000047683716</baseScore><attackVector>LOCAL</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>CHANGED</scope><confidentialityImpact>LOW</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>LOW</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-22</cwe><cwe>CWE-200</cwe></cwes><description>## Impact
+
+Using `@babel/core` to compile maliciously crafted code can allow ab attacker to read any source map from the system that is running Babel, if these conditions are _all_ true:
+- the attacker controls the input source code
+- the attacker can read the output source code
+- the attacker knows the path of the source map file that they want to read
+
+**Users that only compile trusted code are not impacted.**
+
+## Patches
+
+The vulnerability has been fixed in `@babel/core@7.29.6` and `@babel/core@8.0.0-rc.6`.
+
+## Workarounds
+
+Callers can mitigate the issue without upgrading by setting [`inputSourceMap: false`](https://babeljs.io/docs/options#inputsourcemap) in their Babel options.
+
+Callers can also manually extract the `#sourceMappingURL` comment from the input source code, validate whether the source map that it links to is allowed to be read, and if it is pass an object to `inputSourceMap` (passing `false` when it&apos;s not).
+
+## Credits
+
+Thanks Teodor-Cristian Radoi for reporting the vulnerability.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-4x5r-pxfx-6jf8</url><name>https://github.com/babel/babel/security/advisories/GHSA-4x5r-pxfx-6jf8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-4x5r-pxfx-6jf8</url><name>https://github.com/advisories/GHSA-4x5r-pxfx-6jf8</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-49356</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-49356</name></reference><reference><source>NPM Advisory reference: </source><url>https://babeljs.io/docs/options#inputsourcemap</url><name>https://babeljs.io/docs/options#inputsourcemap</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/core:\&lt;\=7.29.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@babel/helpers:7.23.2</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?@babel/helpers</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/helpers</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/helpers</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.2</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fhelpers@7.23.2</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-968p-4wvh-cqc8</name><severity unscored="true">moderate</severity><cvssV3><baseScore>6.199999809265137</baseScore><attackVector>LOCAL</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>### Impact
+
+When using Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), Babel will generate a polyfill for the `.replace` method that has quadratic complexity on some specific replacement pattern strings (i.e. the second argument passed to `.replace`).
+
+Your generated code is vulnerable if _all_ the following conditions are true:
+- You use Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)
+- You use the `.replace` method on a regular expression that contains named capturing groups
+- **Your code uses untrusted strings as the second argument of `.replace`**
+
+If you are using `@babel/preset-env` with the [`targets`](https://babeljs.io/docs/options#targets) option, the transform that injects the vulnerable code is automatically enabled if:
+- you use [_duplicated_ named capturing groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups), and target any browser older than Chrome/Edge 126, Opera 112, Firefox 129, Safari 17.4, or Node.js 23
+- you use any [named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), and target any browser older than Chrome 64, Opera 71, Edge 79, Firefox 78, Safari 11.1, or Node.js 10
+
+You can verify what transforms `@babel/preset-env` is using by enabling the [`debug` option](https://babeljs.io/docs/babel-preset-env#debug).
+
+
+### Patches
+
+This problem has been fixed in `@babel/helpers` and `@babel/runtime` 7.26.10 and 8.0.0-alpha.17, please upgrade. It&apos;s likely that you do not directly depend on `@babel/helpers`, and instead you depend on `@babel/core` (which itself depends on `@babel/helpers`). Upgrading to `@babel/core` 7.26.10 is not required, but it guarantees that you are on a new enough `@babel/helpers` version.
+
+Please note that just updating your Babel dependencies is not enough: you will also need to re-compile your code.
+
+### Workarounds
+
+If you are passing user-provided strings as the second argument of `.replace` on regular expressions that contain named capturing groups, validate the input and make sure it does not contain the substring `$&lt;` if it&apos;s then not followed by `&gt;` (possibly with other characters in between).
+
+### References
+
+This vulnerability was reported and fixed in https://github.com/babel/babel/pull/17173.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</url><name>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/pull/17173</url><name>https://github.com/babel/babel/pull/17173</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/helpers:\&lt;7.26.10:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@babel/helpers:7.23.6</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?@babel/helpers</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/helpers</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/helpers</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.6</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fhelpers@7.23.6</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-968p-4wvh-cqc8</name><severity unscored="true">moderate</severity><cvssV3><baseScore>6.199999809265137</baseScore><attackVector>LOCAL</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>### Impact
+
+When using Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), Babel will generate a polyfill for the `.replace` method that has quadratic complexity on some specific replacement pattern strings (i.e. the second argument passed to `.replace`).
+
+Your generated code is vulnerable if _all_ the following conditions are true:
+- You use Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)
+- You use the `.replace` method on a regular expression that contains named capturing groups
+- **Your code uses untrusted strings as the second argument of `.replace`**
+
+If you are using `@babel/preset-env` with the [`targets`](https://babeljs.io/docs/options#targets) option, the transform that injects the vulnerable code is automatically enabled if:
+- you use [_duplicated_ named capturing groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups), and target any browser older than Chrome/Edge 126, Opera 112, Firefox 129, Safari 17.4, or Node.js 23
+- you use any [named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), and target any browser older than Chrome 64, Opera 71, Edge 79, Firefox 78, Safari 11.1, or Node.js 10
+
+You can verify what transforms `@babel/preset-env` is using by enabling the [`debug` option](https://babeljs.io/docs/babel-preset-env#debug).
+
+
+### Patches
+
+This problem has been fixed in `@babel/helpers` and `@babel/runtime` 7.26.10 and 8.0.0-alpha.17, please upgrade. It&apos;s likely that you do not directly depend on `@babel/helpers`, and instead you depend on `@babel/core` (which itself depends on `@babel/helpers`). Upgrading to `@babel/core` 7.26.10 is not required, but it guarantees that you are on a new enough `@babel/helpers` version.
+
+Please note that just updating your Babel dependencies is not enough: you will also need to re-compile your code.
+
+### Workarounds
+
+If you are passing user-provided strings as the second argument of `.replace` on regular expressions that contain named capturing groups, validate the input and make sure it does not contain the substring `$&lt;` if it&apos;s then not followed by `&gt;` (possibly with other characters in between).
+
+### References
+
+This vulnerability was reported and fixed in https://github.com/babel/babel/pull/17173.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</url><name>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/pull/17173</url><name>https://github.com/babel/babel/pull/17173</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/helpers:\&lt;7.26.10:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@babel/plugin-transform-modules-systemjs:7.23.3</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?@babel/plugin-transform-modules-systemjs</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/plugin-transform-modules-systemjs</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/plugin-transform-modules-systemjs</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.3</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fplugin-transform-modules-systemjs@7.23.3</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-fv7c-fp4j-7gwp</name><severity unscored="true">high</severity><cvssV3><baseScore>8.199999809265137</baseScore><attackVector>LOCAL</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>LOW</privilegesRequired><userInteraction>REQUIRED</userInteraction><scope>CHANGED</scope><confidentialityImpact>HIGH</confidentialityImpact><integrityImpact>HIGH</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-843</cwe><cwe>CWE-94</cwe></cwes><description>### Impact
+
+Using Babel to compile code that was specifically crafted by an attacker can cause Babel to generate output code that executes arbitrary code.
+
+Known affected plugins are:
+- `@babel/plugin-transform-modules-systemjs`
+- `@babel/preset-env` when using the [`modules: &quot;systemjs&quot;` option](https://babel.dev/docs/babel-preset-env#modules), as it delegates to `@babel/plugin-transform-modules-systemjs`
+
+No other plugins under the `@babel` namespace are impacted.
+
+**Users that only compile trusted code are not impacted.**
+
+### Patches
+
+The vulnerability has been fixed in `@babel/plugin-transform-modules-systemjs@7.29.4`.
+
+Babel also released `@babel/preset-env@7.29.5`, updating its `@babel/plugin-transform-modules-systemjs` dependency, to simplify forcing the update if you are using `@babel/preset-env` directly.
+
+### Workarounds
+
+- Pin `@babel/parser` to v7.11.5. The downgrade will completely disable string module name parsing, but it would also disable other new language features and the build pipeline may fail as a result. Only do so if you are working on a legacy codebase and can not upgrade `@babel/plugin-transform-modules-systemjs` to v7.29.4.
+- Do not use the `modules: &quot;systemjs&quot;` option, migrate the codebase to native ES Modules or any other module formats.
+
+### Credits
+Babel thanks Daniel Cervera for reporting the vulnerability.</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-44728</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-44728</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-fv7c-fp4j-7gwp</url><name>https://github.com/babel/babel/security/advisories/GHSA-fv7c-fp4j-7gwp</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-fv7c-fp4j-7gwp</url><name>https://github.com/advisories/GHSA-fv7c-fp4j-7gwp</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/plugin-transform-modules-systemjs:\&gt;\=7.12.0\&lt;\=7.29.3:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@babel/runtime:7.23.2</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?@babel/runtime</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@babel/runtime</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@babel/runtime</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.23.2</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40babel%2Fruntime@7.23.2</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-968p-4wvh-cqc8</name><severity unscored="true">moderate</severity><cvssV3><baseScore>6.199999809265137</baseScore><attackVector>LOCAL</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>### Impact
+
+When using Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), Babel will generate a polyfill for the `.replace` method that has quadratic complexity on some specific replacement pattern strings (i.e. the second argument passed to `.replace`).
+
+Your generated code is vulnerable if _all_ the following conditions are true:
+- You use Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)
+- You use the `.replace` method on a regular expression that contains named capturing groups
+- **Your code uses untrusted strings as the second argument of `.replace`**
+
+If you are using `@babel/preset-env` with the [`targets`](https://babeljs.io/docs/options#targets) option, the transform that injects the vulnerable code is automatically enabled if:
+- you use [_duplicated_ named capturing groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups), and target any browser older than Chrome/Edge 126, Opera 112, Firefox 129, Safari 17.4, or Node.js 23
+- you use any [named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), and target any browser older than Chrome 64, Opera 71, Edge 79, Firefox 78, Safari 11.1, or Node.js 10
+
+You can verify what transforms `@babel/preset-env` is using by enabling the [`debug` option](https://babeljs.io/docs/babel-preset-env#debug).
+
+
+### Patches
+
+This problem has been fixed in `@babel/helpers` and `@babel/runtime` 7.26.10 and 8.0.0-alpha.17, please upgrade. It&apos;s likely that you do not directly depend on `@babel/helpers`, and instead you depend on `@babel/core` (which itself depends on `@babel/helpers`). Upgrading to `@babel/core` 7.26.10 is not required, but it guarantees that you are on a new enough `@babel/helpers` version.
+
+Please note that just updating your Babel dependencies is not enough: you will also need to re-compile your code.
+
+### Workarounds
+
+If you are passing user-provided strings as the second argument of `.replace` on regular expressions that contain named capturing groups, validate the input and make sure it does not contain the substring `$&lt;` if it&apos;s then not followed by `&gt;` (possibly with other characters in between).
+
+### References
+
+This vulnerability was reported and fixed in https://github.com/babel/babel/pull/17173.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</url><name>https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</url><name>https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-27789</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/babel/babel/pull/17173</url><name>https://github.com/babel/babel/pull/17173</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@babel\/runtime:\&lt;7.26.10:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>@tootallnate/once:2.0.0</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?@tootallnate/once</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>@tootallnate/once</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>@tootallnate/once</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>2.0.0</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/%40tootallnate%2Fonce@2.0.0</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-vpq2-c234-7xj6</name><severity unscored="true">low</severity><cvssV3><baseScore>3.299999952316284</baseScore><attackVector>LOCAL</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>LOW</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>LOW</availabilityImpact><baseSeverity>LOW</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-705</cwe></cwes><description>Versions of the package @tootallnate/once before 3.0.1 are vulnerable to Incorrect Control Flow Scoping in promise resolving when AbortSignal option is used. The Promise remains in a permanently pending state after the signal is aborted, causing any await or .then() usage to hang indefinitely. This can cause a control-flow leak that can lead to stalled requests, blocked workers, or degraded application availability.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/TooTallNate/once/issues/8</url><name>https://github.com/TooTallNate/once/issues/8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/TooTallNate/once/commit/b9f43cc5259bee2952d91ad3cdbd201a82df448a</url><name>https://github.com/TooTallNate/once/commit/b9f43cc5259bee2952d91ad3cdbd201a82df448a</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/TooTallNate/once/releases/tag/v2.0.1</url><name>https://github.com/TooTallNate/once/releases/tag/v2.0.1</name></reference><reference><source>NPM Advisory reference: </source><url>https://security.snyk.io/vuln/SNYK-JS-TOOTALLNATEONCE-15250612</url><name>https://security.snyk.io/vuln/SNYK-JS-TOOTALLNATEONCE-15250612</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-vpq2-c234-7xj6</url><name>https://github.com/advisories/GHSA-vpq2-c234-7xj6</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-3449</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-3449</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:\@tootallnate\/once:\&lt;2.0.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>ajv:6.12.6</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?ajv</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>ajv</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>ajv</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>6.12.6</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/ajv@6.12.6</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-2g4f-4pwh-qvx6</name><severity unscored="true">moderate</severity><cwes><cwe>CWE-400</cwe><cwe>CWE-1333</cwe></cwes><description>ajv (Another JSON Schema Validator) through version 8.17.1 is vulnerable to Regular Expression Denial of Service (ReDoS) when the `$data` option is enabled. The pattern keyword accepts runtime data via JSON Pointer syntax (`$data` reference), which is passed directly to the JavaScript `RegExp()` constructor without validation. An attacker can inject a malicious regex pattern (e.g., `\&quot;^(a|a)*$\&quot;`) combined with crafted input to cause catastrophic backtracking. A 31-character payload causes approximately 44 seconds of CPU blocking, with each additional character doubling execution time. This enables complete denial of service with a single HTTP request against any API using ajv with `$data`: true for dynamic schema validation.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/commit/720a23fa453ffae8340e92c9b0fe886c54cfe0d5</url><name>https://github.com/ajv-validator/ajv/commit/720a23fa453ffae8340e92c9b0fe886c54cfe0d5</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/pull/2590</url><name>https://github.com/ajv-validator/ajv/pull/2590</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/github/advisory-database/pull/6991</url><name>https://github.com/github/advisory-database/pull/6991</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/pull/2588</url><name>https://github.com/ajv-validator/ajv/pull/2588</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/releases/tag/v8.18.0</url><name>https://github.com/ajv-validator/ajv/releases/tag/v8.18.0</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/releases/tag/v6.14.0</url><name>https://github.com/ajv-validator/ajv/releases/tag/v6.14.0</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/EthanKim88/ethan-cve-disclosures/blob/main/CVE-2025-69873-ajv-ReDoS.md</url><name>https://github.com/EthanKim88/ethan-cve-disclosures/blob/main/CVE-2025-69873-ajv-ReDoS.md</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-69873</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-69873</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/ajv-validator/ajv/pull/2586</url><name>https://github.com/ajv-validator/ajv/pull/2586</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-2g4f-4pwh-qvx6</url><name>https://github.com/advisories/GHSA-2g4f-4pwh-qvx6</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:ajv:\&lt;6.14.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>auth-controller.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/controllers/auth-controller.js</filePath><md5>be5fa941a49110d7e1109dc5176e7e82</md5><sha1>c3b4bda0b44fd89055c7397f616cbe2c84222a7a</sha1><sha256>23631923df2c27eb1722b467809c3dc30247a4bb7ce9f30bc9cad2f8361c9e97</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>auth.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/routes/auth.js</filePath><md5>3a77282cd54bf64033360362a60c34c4</md5><sha1>cc2fc628b0ecd2ed78ad0e00d083a2ecda2d5e21</sha1><sha256>083973f5802ec4ef8992bf1fdfca05739e068a09d94afb0a321a3d1b49483139</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>braces:3.0.3</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?braces</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><relatedDependencies><relatedDependency isVirtual="true"><fileName>braces:3.0.3</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?braces</filePath><sha256></sha256><sha1></sha1><md5></md5><identifiers><package><id>pkg:npm/braces@3.0.3</id></package></identifiers></relatedDependency></relatedDependencies><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>braces</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>braces</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>3.0.3</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/braces@3.0.3</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-vfj7-8cjw-p6xm</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-674</cwe></cwes><description>braces through 3.0.3 contains a stack overflow vulnerability in the recursive AST walkers that lack depth guards. Attackers can supply deeply nested brace patterns under the character limit to exhaust the call stack and terminate the Node.js process with an uncaught RangeError.</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-93687</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-93687</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-vfj7-8cjw-p6xm</url><name>https://github.com/advisories/GHSA-vfj7-8cjw-p6xm</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/braces/blob/3.0.3/lib/expand.js#L102-L105</url><name>https://github.com/micromatch/braces/blob/3.0.3/lib/expand.js#L102-L105</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/braces/issues/70</url><name>https://github.com/micromatch/braces/issues/70</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/braces/blob/3.0.3/lib/parse.js#L38-L40</url><name>https://github.com/micromatch/braces/blob/3.0.3/lib/parse.js#L38-L40</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/braces/blob/3.0.3/lib/compile.js#L49-L53</url><name>https://github.com/micromatch/braces/blob/3.0.3/lib/compile.js#L49-L53</name></reference><reference><source>NPM Advisory reference: </source><url>https://www.vulncheck.com/advisories/braces-through-3.0.3-stack-overflow-via-deeply-nested-patterns</url><name>https://www.vulncheck.com/advisories/braces-through-3.0.3-stack-overflow-via-deeply-nested-patterns</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:braces:\&lt;\=3.0.3:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>browserslist:4.22.1</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?browserslist</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>browserslist</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>browserslist</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.22.1</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/browserslist@4.22.1</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-73wf-gq98-2v4g</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1321</cwe><cwe>CWE-248</cwe></cwes><description>## Vulnerability Details
+
+**File**: `node.js`
+**Function**: `normalizeStats()` (line ~214), reached from `getStat()` (called
+**unconditionally** on every `browserslist()` call) and `loadStat()`
+
+### Root Cause
+```js
+function normalizeStats(data, stats) {
+  if (!data) { data = {} }
+  if (stats &amp;&amp; &apos;dataByBrowser&apos; in stats) { stats = stats.dataByBrowser }
+  if (typeof stats !== &apos;object&apos;) return undefined
+
+  var normalized = {}
+  for (var i in stats) {
+    var versions = Object.keys(stats[i])
+    if (versions.length === 1 &amp;&amp; data[i] &amp;&amp; data[i].versions.length === 1) {
+      var normal = data[i].versions[0]
+      normalized[i] = {}
+      normalized[i][normal] = stats[i][versions[0]]
+    } else {
+      normalized[i] = stats[i]
+    }
+  }
+  return normalized
+}
+```
+`stats` is untrusted: it comes from `JSON.parse()`-ing a
+`browserslist-stats.json` file — auto-discovered by walking up the directory
+tree from the project root **on every `browserslist()` call, regardless of
+the query** (`env.getStat(opts, browserslist.data)` runs unconditionally
+inside `browserslist()`) — or from `opts.stats` passed programmatically /
+via the CLI&apos;s `--stats=` flag. `data` is `browserslist.data`, a plain object
+populated only with real browser names.
+
+Two independent bugs from the same root cause (unguarded `for...in` over
+untrusted keys used with plain-object bracket access/assignment):
+
+1. **Crash**: `data[i]` has no `hasOwnProperty` guard. If `stats` contains a
+   key that also happens to be an inherited `Object.prototype` member name —
+   `&quot;__proto__&quot;`, `&quot;toString&quot;`, `&quot;valueOf&quot;`, `&quot;constructor&quot;`,
+   `&quot;hasOwnProperty&quot;`, `&quot;isPrototypeOf&quot;`, etc. — `data[i]` resolves to that
+   inherited function/object (always truthy), and the code then does
+   `data[i].versions.length` → `undefined.length` → **uncaught `TypeError`**,
+   for any such key whose JSON value has exactly one sub-key, e.g.:
+   ```json
+   { &quot;toString&quot;: { &quot;onekey&quot;: 5 }, &quot;chrome&quot;: { &quot;100&quot;: 50 } }
+   ```
+2. **Prototype write**: `normalized[i] = ...` on the fresh
+   `normalized = {}` — if `i` is exactly `&quot;__proto__&quot;` (and `normalized` has
+   no own property by that name yet), this computed assignment invokes the
+   real `Object.prototype.__proto__` setter, changing `normalized`&apos;s actual
+   `[[Prototype]]` instead of creating a plain property.
+
+Because this runs on **every** `browserslist()` call regardless of the
+query, simply committing a poisoned `browserslist-stats.json` anywhere in a
+project&apos;s directory tree breaks every subsequent Browserslist call in that
+project — including calls made by Autoprefixer, Babel `preset-env`,
+Stylelint, or PostCSS internally, for completely unrelated queries.
+
+### Attack Scenario
+1. Attacker submits a PR (or a compromised dependency) adding a
+   `browserslist-stats.json` file anywhere between the project root and
+   filesystem root, containing e.g.
+   `{&quot;toString&quot;: {&quot;onekey&quot;: 5}, &quot;chrome&quot;: {&quot;100&quot;: 50}}`.
+2. The victim&apos;s build/CI pipeline runs any tool that calls `browserslist()`
+   internally, for **any** query.
+3. The auto-discovered poisoned file crashes the process with an uncaught
+   `TypeError` on the very first call.
+
+### Measured Impact
+Confirmed crash (real `browserslist()` call, v4.28.6) with `stats` keys:
+`__proto__`, `toString`, `valueOf`, `hasOwnProperty`, `constructor`,
+`isPrototypeOf` — each paired with a one-key JSON object — for any query,
+including `browserslist(&apos;defaults&apos;)` which never mentions stats.
+
+### Recommended Fix (implemented and verified)
+```js
+var normalized = Object.create(null)
+for (var i in stats) {
+  var versions = Object.keys(stats[i])
+  var known = Object.prototype.hasOwnProperty.call(data, i) &amp;&amp; data[i]
+  if (versions.length === 1 &amp;&amp; known &amp;&amp; known.versions.length === 1) {
+    var normal = known.versions[0]
+    normalized[i] = Object.create(null)
+    normalized[i][normal] = stats[i][versions[0]]
+  } else {
+    normalized[i] = stats[i]
+  }
+}
+return normalized
+```
+`normalized` uses `Object.create(null)` so a write to `&quot;__proto__&quot;` is an
+ordinary property set, never a `[[Prototype]]` change; `data[i]` is replaced
+with an explicit `hasOwnProperty` check so it never resolves to an inherited
+`Object.prototype` member.
+
+**Verification**:
+- `NODE_ENV=test npx uvu test .test.js` → 301/301 pass unmodified
+  (`test/custom.test.js`, `test/shareable-stats.test.js`, `test/cover.test.js`
+  exercise the stats-handling paths).
+- All 6 previously crash-inducing keys, tested individually, now resolve
+  without error.
+- The realistic file-based auto-discovery scenario (poisoned
+  `browserslist-stats.json` + an unrelated `browserslist(&apos;defaults&apos;)` call)
+  now returns a normal result instead of crashing.
+
+### Impact
+- **Who is affected**: Any project whose build/CI invokes Browserslist
+  (directly or via Autoprefixer/Babel/Stylelint/PostCSS) in a directory tree
+  an attacker can place a file into (external PR, compromised dependency),
+  or any app that passes user-influenced data into `opts.stats`.
+- **What an attacker achieves**: Immediate DoS — crashes the invoking
+  process on the first Browserslist call after the file is present, for any
+  query, no special syntax needed.
+- **Conditions required**: No authentication — only the ability to add a
+  file to the project&apos;s directory tree, or influence `opts.stats`.
+
+### Verification Environment
+browserslist @ HEAD (== v4.28.6, current latest stable release) under local
+Node.js v20.19.5. Pure JS library — executed directly, no server needed.
+
+### Note
+Found via a systematic review of prototype-pollution-adjacent patterns in
+this codebase after confirming two unrelated algorithmic-complexity issues
+(reported separately as GHSA-rrmg-cfrq-23vv and GHSA-g6p8-hj8g-x889) in the
+same research pass. A similar `for...in` + bracket-write pattern in
+`index.js`&apos;s `copyObject()` (used by `normalizeAndroidData`) was already
+guarded against `__proto__`/`constructor`/`prototype` keys by a prior,
+unrelated commit — that guard was never applied to this function.</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-73088</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-73088</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-73wf-gq98-2v4g</url><name>https://github.com/advisories/GHSA-73wf-gq98-2v4g</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/security/advisories/GHSA-73wf-gq98-2v4g</url><name>https://github.com/browserslist/browserslist/security/advisories/GHSA-73wf-gq98-2v4g</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/commit/f9914ad9effc865ccc27d816255625890b31ca51</url><name>https://github.com/browserslist/browserslist/commit/f9914ad9effc865ccc27d816255625890b31ca51</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/releases/tag/4.28.7</url><name>https://github.com/browserslist/browserslist/releases/tag/4.28.7</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:browserslist:\&lt;\=4.28.6:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-c83g-rgw3-j3cx</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-770</cwe></cwes><description>## Vulnerability Details
+
+**File**: `index.js`
+**Location**: `cache` (browserslist()&apos;s result cache, line ~402) and
+`parseCache` (parseQueries()&apos;s AST cache)
+
+### Root Cause
+```js
+var cache = {}
+var parseCache = {}
+
+function browserslist(queries, opts) {
+  ...
+  var cacheKey = JSON.stringify([queries, context])
+  if (cache[cacheKey]) return cache[cacheKey]
+  ...
+  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { cache[cacheKey] = result }
+  return result
+}
+
+function parseQueries(queries) {
+  var cacheKey = JSON.stringify(queries)
+  if (cacheKey in parseCache) return parseCache[cacheKey]
+  var result = parseWithoutCache(QUERIES, queries)
+  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { parseCache[cacheKey] = result }
+  ...
+}
+```
+Every distinct `(queries, context)` pair is cached forever — no size cap,
+TTL, or eviction. `browserslist.clearCaches()` never resets either object
+(it only resets `node.js`&apos;s own filesystem caches); the only opt-out is the
+`BROWSERSLIST_DISABLE_CACHE` env var, controlled by the *calling
+application*, not an attacker.
+
+Some short, valid queries amplify this badly. The `since &lt;year&gt;-&lt;month&gt;-&lt;day&gt;`
+query type (`/^since (\d+)-(\d+)-(\d+)$/i`) accepts **any** digit
+combination — `Date.UTC()` normalizes rather than rejects out-of-range
+values — giving an effectively unbounded space of ~17-byte distinct cache
+keys, each of which resolves to (and caches) a result close to the full
+~8.5 KB browser list for any sufficiently old year.
+
+### Measured Impact
+20,000 distinct `since &lt;year&gt;-&lt;month&gt;-&lt;day&gt;` queries (~330 KB total input,
+`--expose-gc` before/after measurement to rule out uncollected garbage)
+retained **over 50 MB** of heap permanently — roughly **150x**
+amplification, growing linearly with no cap observed up to 40,000 queries
+(52.3 MB).
+
+### Attack Scenario
+Any long-running process (server, daemon, warm CI worker) that calls
+`browserslist()` with a query value that varies across requests/items and is
+influenced, even partially, by external input accumulates one cache entry
+per distinct value ever seen. An attacker who can influence that value
+across *many* requests (this is a volumetric attack, unlike the
+single-request DoS findings from this same research pass) sends a stream of
+cheap, distinct queries (e.g. `since 1900-01-01`, `since 1900-01-02`, ...)
+until the process runs out of memory and crashes.
+
+### Recommended Fix (implemented and verified)
+Replace both plain-object caches with `Map`s bounded to a fixed maximum
+entry count, evicting the oldest entry once the cap is reached (`Map`
+preserves insertion order, so `.keys().next().value` is always oldest):
+
+```js
+var CACHE_MAX_ENTRIES = 500
+
+function boundedCacheSet(map, key, value) {
+  if (map.size &gt;= CACHE_MAX_ENTRIES) {
+    map.delete(map.keys().next().value)
+  }
+  map.set(key, value)
+}
+
+var cache = new Map()
+var parseCache = new Map()
+```
+(read sites changed to `.has()`/`.get()`, write sites to `boundedCacheSet()`)
+
+**Verification**:
+- `NODE_ENV=test npx uvu test .test.js` → 301/301 pass unmodified
+  (`test/cache.test.js` exercises `clearCaches()`/`BROWSERSLIST_DISABLE_CACHE`
+  against `node.js`&apos;s separate filesystem caches, unaffected here); confirmed
+  a repeated identical call still returns the cached reference.
+- Re-ran the memory PoC post-fix: heap stayed flat at ~4.9 MB after 5,000,
+  10,000, 20,000, and 40,000 distinct `since`-date queries (was
+  10.5 → 16.5 → 28.4 → 52.3 MB pre-fix).
+
+### Impact
+- **Who is affected**: Long-running processes calling `browserslist()` with
+  query values that vary across requests/items and are influenced by
+  external input.
+- **What an attacker achieves**: DoS via eventual out-of-memory crash, given
+  sustained traffic over time (not a single small payload).
+- **Conditions required**: No authentication; requires volume rather than a
+  single request, hence Medium rather than High severity.
+
+### Verification Environment
+browserslist @ HEAD (== v4.28.6, current latest stable release) under local
+Node.js v20.19.5, run with `--expose-gc` for accurate heap measurement.
+
+### Note
+Found during a broader review of this codebase in the same research pass
+that produced GHSA-rrmg-cfrq-23vv (parse.js algorithmic complexity),
+GHSA-g6p8-hj8g-x889 (baseline regexp ReDoS), GHSA-73wf-gq98-2v4g
+(normalizeStats crash/prototype write), and GHSA-h633-868p-5rfw
+(SCOPED_CONFIG__PATTERN ReDoS) — all single-request DoS vectors. This one is
+different in character (volumetric, not single-request) and is reported
+separately/scored lower accordingly.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/security/advisories/GHSA-c83g-rgw3-j3cx</url><name>https://github.com/browserslist/browserslist/security/advisories/GHSA-c83g-rgw3-j3cx</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-73089</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-73089</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-c83g-rgw3-j3cx</url><name>https://github.com/advisories/GHSA-c83g-rgw3-j3cx</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/commit/f2931a3ff2a3a31abf84ef01a7400b270aad6405</url><name>https://github.com/browserslist/browserslist/commit/f2931a3ff2a3a31abf84ef01a7400b270aad6405</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/releases/tag/4.28.7</url><name>https://github.com/browserslist/browserslist/releases/tag/4.28.7</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:browserslist:\&lt;\=4.28.6:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>browserslist:4.22.2</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?browserslist</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>browserslist</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>browserslist</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.22.2</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/browserslist@4.22.2</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-73wf-gq98-2v4g</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1321</cwe><cwe>CWE-248</cwe></cwes><description>## Vulnerability Details
+
+**File**: `node.js`
+**Function**: `normalizeStats()` (line ~214), reached from `getStat()` (called
+**unconditionally** on every `browserslist()` call) and `loadStat()`
+
+### Root Cause
+```js
+function normalizeStats(data, stats) {
+  if (!data) { data = {} }
+  if (stats &amp;&amp; &apos;dataByBrowser&apos; in stats) { stats = stats.dataByBrowser }
+  if (typeof stats !== &apos;object&apos;) return undefined
+
+  var normalized = {}
+  for (var i in stats) {
+    var versions = Object.keys(stats[i])
+    if (versions.length === 1 &amp;&amp; data[i] &amp;&amp; data[i].versions.length === 1) {
+      var normal = data[i].versions[0]
+      normalized[i] = {}
+      normalized[i][normal] = stats[i][versions[0]]
+    } else {
+      normalized[i] = stats[i]
+    }
+  }
+  return normalized
+}
+```
+`stats` is untrusted: it comes from `JSON.parse()`-ing a
+`browserslist-stats.json` file — auto-discovered by walking up the directory
+tree from the project root **on every `browserslist()` call, regardless of
+the query** (`env.getStat(opts, browserslist.data)` runs unconditionally
+inside `browserslist()`) — or from `opts.stats` passed programmatically /
+via the CLI&apos;s `--stats=` flag. `data` is `browserslist.data`, a plain object
+populated only with real browser names.
+
+Two independent bugs from the same root cause (unguarded `for...in` over
+untrusted keys used with plain-object bracket access/assignment):
+
+1. **Crash**: `data[i]` has no `hasOwnProperty` guard. If `stats` contains a
+   key that also happens to be an inherited `Object.prototype` member name —
+   `&quot;__proto__&quot;`, `&quot;toString&quot;`, `&quot;valueOf&quot;`, `&quot;constructor&quot;`,
+   `&quot;hasOwnProperty&quot;`, `&quot;isPrototypeOf&quot;`, etc. — `data[i]` resolves to that
+   inherited function/object (always truthy), and the code then does
+   `data[i].versions.length` → `undefined.length` → **uncaught `TypeError`**,
+   for any such key whose JSON value has exactly one sub-key, e.g.:
+   ```json
+   { &quot;toString&quot;: { &quot;onekey&quot;: 5 }, &quot;chrome&quot;: { &quot;100&quot;: 50 } }
+   ```
+2. **Prototype write**: `normalized[i] = ...` on the fresh
+   `normalized = {}` — if `i` is exactly `&quot;__proto__&quot;` (and `normalized` has
+   no own property by that name yet), this computed assignment invokes the
+   real `Object.prototype.__proto__` setter, changing `normalized`&apos;s actual
+   `[[Prototype]]` instead of creating a plain property.
+
+Because this runs on **every** `browserslist()` call regardless of the
+query, simply committing a poisoned `browserslist-stats.json` anywhere in a
+project&apos;s directory tree breaks every subsequent Browserslist call in that
+project — including calls made by Autoprefixer, Babel `preset-env`,
+Stylelint, or PostCSS internally, for completely unrelated queries.
+
+### Attack Scenario
+1. Attacker submits a PR (or a compromised dependency) adding a
+   `browserslist-stats.json` file anywhere between the project root and
+   filesystem root, containing e.g.
+   `{&quot;toString&quot;: {&quot;onekey&quot;: 5}, &quot;chrome&quot;: {&quot;100&quot;: 50}}`.
+2. The victim&apos;s build/CI pipeline runs any tool that calls `browserslist()`
+   internally, for **any** query.
+3. The auto-discovered poisoned file crashes the process with an uncaught
+   `TypeError` on the very first call.
+
+### Measured Impact
+Confirmed crash (real `browserslist()` call, v4.28.6) with `stats` keys:
+`__proto__`, `toString`, `valueOf`, `hasOwnProperty`, `constructor`,
+`isPrototypeOf` — each paired with a one-key JSON object — for any query,
+including `browserslist(&apos;defaults&apos;)` which never mentions stats.
+
+### Recommended Fix (implemented and verified)
+```js
+var normalized = Object.create(null)
+for (var i in stats) {
+  var versions = Object.keys(stats[i])
+  var known = Object.prototype.hasOwnProperty.call(data, i) &amp;&amp; data[i]
+  if (versions.length === 1 &amp;&amp; known &amp;&amp; known.versions.length === 1) {
+    var normal = known.versions[0]
+    normalized[i] = Object.create(null)
+    normalized[i][normal] = stats[i][versions[0]]
+  } else {
+    normalized[i] = stats[i]
+  }
+}
+return normalized
+```
+`normalized` uses `Object.create(null)` so a write to `&quot;__proto__&quot;` is an
+ordinary property set, never a `[[Prototype]]` change; `data[i]` is replaced
+with an explicit `hasOwnProperty` check so it never resolves to an inherited
+`Object.prototype` member.
+
+**Verification**:
+- `NODE_ENV=test npx uvu test .test.js` → 301/301 pass unmodified
+  (`test/custom.test.js`, `test/shareable-stats.test.js`, `test/cover.test.js`
+  exercise the stats-handling paths).
+- All 6 previously crash-inducing keys, tested individually, now resolve
+  without error.
+- The realistic file-based auto-discovery scenario (poisoned
+  `browserslist-stats.json` + an unrelated `browserslist(&apos;defaults&apos;)` call)
+  now returns a normal result instead of crashing.
+
+### Impact
+- **Who is affected**: Any project whose build/CI invokes Browserslist
+  (directly or via Autoprefixer/Babel/Stylelint/PostCSS) in a directory tree
+  an attacker can place a file into (external PR, compromised dependency),
+  or any app that passes user-influenced data into `opts.stats`.
+- **What an attacker achieves**: Immediate DoS — crashes the invoking
+  process on the first Browserslist call after the file is present, for any
+  query, no special syntax needed.
+- **Conditions required**: No authentication — only the ability to add a
+  file to the project&apos;s directory tree, or influence `opts.stats`.
+
+### Verification Environment
+browserslist @ HEAD (== v4.28.6, current latest stable release) under local
+Node.js v20.19.5. Pure JS library — executed directly, no server needed.
+
+### Note
+Found via a systematic review of prototype-pollution-adjacent patterns in
+this codebase after confirming two unrelated algorithmic-complexity issues
+(reported separately as GHSA-rrmg-cfrq-23vv and GHSA-g6p8-hj8g-x889) in the
+same research pass. A similar `for...in` + bracket-write pattern in
+`index.js`&apos;s `copyObject()` (used by `normalizeAndroidData`) was already
+guarded against `__proto__`/`constructor`/`prototype` keys by a prior,
+unrelated commit — that guard was never applied to this function.</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-73088</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-73088</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-73wf-gq98-2v4g</url><name>https://github.com/advisories/GHSA-73wf-gq98-2v4g</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/security/advisories/GHSA-73wf-gq98-2v4g</url><name>https://github.com/browserslist/browserslist/security/advisories/GHSA-73wf-gq98-2v4g</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/commit/f9914ad9effc865ccc27d816255625890b31ca51</url><name>https://github.com/browserslist/browserslist/commit/f9914ad9effc865ccc27d816255625890b31ca51</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/releases/tag/4.28.7</url><name>https://github.com/browserslist/browserslist/releases/tag/4.28.7</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:browserslist:\&lt;\=4.28.6:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-c83g-rgw3-j3cx</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-770</cwe></cwes><description>## Vulnerability Details
+
+**File**: `index.js`
+**Location**: `cache` (browserslist()&apos;s result cache, line ~402) and
+`parseCache` (parseQueries()&apos;s AST cache)
+
+### Root Cause
+```js
+var cache = {}
+var parseCache = {}
+
+function browserslist(queries, opts) {
+  ...
+  var cacheKey = JSON.stringify([queries, context])
+  if (cache[cacheKey]) return cache[cacheKey]
+  ...
+  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { cache[cacheKey] = result }
+  return result
+}
+
+function parseQueries(queries) {
+  var cacheKey = JSON.stringify(queries)
+  if (cacheKey in parseCache) return parseCache[cacheKey]
+  var result = parseWithoutCache(QUERIES, queries)
+  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { parseCache[cacheKey] = result }
+  ...
+}
+```
+Every distinct `(queries, context)` pair is cached forever — no size cap,
+TTL, or eviction. `browserslist.clearCaches()` never resets either object
+(it only resets `node.js`&apos;s own filesystem caches); the only opt-out is the
+`BROWSERSLIST_DISABLE_CACHE` env var, controlled by the *calling
+application*, not an attacker.
+
+Some short, valid queries amplify this badly. The `since &lt;year&gt;-&lt;month&gt;-&lt;day&gt;`
+query type (`/^since (\d+)-(\d+)-(\d+)$/i`) accepts **any** digit
+combination — `Date.UTC()` normalizes rather than rejects out-of-range
+values — giving an effectively unbounded space of ~17-byte distinct cache
+keys, each of which resolves to (and caches) a result close to the full
+~8.5 KB browser list for any sufficiently old year.
+
+### Measured Impact
+20,000 distinct `since &lt;year&gt;-&lt;month&gt;-&lt;day&gt;` queries (~330 KB total input,
+`--expose-gc` before/after measurement to rule out uncollected garbage)
+retained **over 50 MB** of heap permanently — roughly **150x**
+amplification, growing linearly with no cap observed up to 40,000 queries
+(52.3 MB).
+
+### Attack Scenario
+Any long-running process (server, daemon, warm CI worker) that calls
+`browserslist()` with a query value that varies across requests/items and is
+influenced, even partially, by external input accumulates one cache entry
+per distinct value ever seen. An attacker who can influence that value
+across *many* requests (this is a volumetric attack, unlike the
+single-request DoS findings from this same research pass) sends a stream of
+cheap, distinct queries (e.g. `since 1900-01-01`, `since 1900-01-02`, ...)
+until the process runs out of memory and crashes.
+
+### Recommended Fix (implemented and verified)
+Replace both plain-object caches with `Map`s bounded to a fixed maximum
+entry count, evicting the oldest entry once the cap is reached (`Map`
+preserves insertion order, so `.keys().next().value` is always oldest):
+
+```js
+var CACHE_MAX_ENTRIES = 500
+
+function boundedCacheSet(map, key, value) {
+  if (map.size &gt;= CACHE_MAX_ENTRIES) {
+    map.delete(map.keys().next().value)
+  }
+  map.set(key, value)
+}
+
+var cache = new Map()
+var parseCache = new Map()
+```
+(read sites changed to `.has()`/`.get()`, write sites to `boundedCacheSet()`)
+
+**Verification**:
+- `NODE_ENV=test npx uvu test .test.js` → 301/301 pass unmodified
+  (`test/cache.test.js` exercises `clearCaches()`/`BROWSERSLIST_DISABLE_CACHE`
+  against `node.js`&apos;s separate filesystem caches, unaffected here); confirmed
+  a repeated identical call still returns the cached reference.
+- Re-ran the memory PoC post-fix: heap stayed flat at ~4.9 MB after 5,000,
+  10,000, 20,000, and 40,000 distinct `since`-date queries (was
+  10.5 → 16.5 → 28.4 → 52.3 MB pre-fix).
+
+### Impact
+- **Who is affected**: Long-running processes calling `browserslist()` with
+  query values that vary across requests/items and are influenced by
+  external input.
+- **What an attacker achieves**: DoS via eventual out-of-memory crash, given
+  sustained traffic over time (not a single small payload).
+- **Conditions required**: No authentication; requires volume rather than a
+  single request, hence Medium rather than High severity.
+
+### Verification Environment
+browserslist @ HEAD (== v4.28.6, current latest stable release) under local
+Node.js v20.19.5, run with `--expose-gc` for accurate heap measurement.
+
+### Note
+Found during a broader review of this codebase in the same research pass
+that produced GHSA-rrmg-cfrq-23vv (parse.js algorithmic complexity),
+GHSA-g6p8-hj8g-x889 (baseline regexp ReDoS), GHSA-73wf-gq98-2v4g
+(normalizeStats crash/prototype write), and GHSA-h633-868p-5rfw
+(SCOPED_CONFIG__PATTERN ReDoS) — all single-request DoS vectors. This one is
+different in character (volumetric, not single-request) and is reported
+separately/scored lower accordingly.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/security/advisories/GHSA-c83g-rgw3-j3cx</url><name>https://github.com/browserslist/browserslist/security/advisories/GHSA-c83g-rgw3-j3cx</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-73089</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-73089</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-c83g-rgw3-j3cx</url><name>https://github.com/advisories/GHSA-c83g-rgw3-j3cx</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/commit/f2931a3ff2a3a31abf84ef01a7400b270aad6405</url><name>https://github.com/browserslist/browserslist/commit/f2931a3ff2a3a31abf84ef01a7400b270aad6405</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/browserslist/browserslist/releases/tag/4.28.7</url><name>https://github.com/browserslist/browserslist/releases/tag/4.28.7</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:browserslist:\&lt;\=4.28.6:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>cache-posts.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/utils/cache-posts.js</filePath><md5>713461ce25b6933f70cc9547af95bd31</md5><sha1>8d8e01213a94983c497a800274e466538a858b22</sha1><sha256>2fd1b15da6f308c141e29fb19c09fa47ffb61a52e8c6c8c50cc32f1f7ef2197a</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>constants.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/utils/constants.js</filePath><md5>ce73a97f7e47de24878649881df83237</md5><sha1>54b83f8274a3e693eae2bc922b2ed1afe571e2a0</sha1><sha256>0be7cb8d090d708709c3beba7357d85ed6758f4b3d423e78fe3e8a40bea324bf</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>cookie_options.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/utils/cookie_options.js</filePath><md5>0b705a202fdb59f2396b401420b72f64</md5><sha1>343a99db3ff12ff3f6d1bdcba9f49372628bc3e8</sha1><sha256>5a8739a3adf969ccaa4515321f49a6ee09283c7fe50bf091f06437647883febb</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>cross-spawn:7.0.3</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?cross-spawn</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>cross-spawn</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>cross-spawn</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>7.0.3</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/cross-spawn@7.0.3</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-3xgq-45jj-v275</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>Versions of the package cross-spawn before 7.0.5 are vulnerable to Regular Expression Denial of Service (ReDoS) due to improper input sanitization. An attacker can increase the CPU usage and crash the program by crafting a very large and well crafted string.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/moxystudio/node-cross-spawn/commit/640d391fde65388548601d95abedccc12943374f</url><name>https://github.com/moxystudio/node-cross-spawn/commit/640d391fde65388548601d95abedccc12943374f</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-3xgq-45jj-v275</url><name>https://github.com/advisories/GHSA-3xgq-45jj-v275</name></reference><reference><source>NPM Advisory reference: </source><url>https://security.snyk.io/vuln/SNYK-JS-CROSSSPAWN-8303230</url><name>https://security.snyk.io/vuln/SNYK-JS-CROSSSPAWN-8303230</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/moxystudio/node-cross-spawn/issues/165</url><name>https://github.com/moxystudio/node-cross-spawn/issues/165</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/moxystudio/node-cross-spawn/commit/5ff3a07d9add449021d806e45c4168203aa833ff</url><name>https://github.com/moxystudio/node-cross-spawn/commit/5ff3a07d9add449021d806e45c4168203aa833ff</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/moxystudio/node-cross-spawn/pull/160</url><name>https://github.com/moxystudio/node-cross-spawn/pull/160</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2024-21538</url><name>https://nvd.nist.gov/vuln/detail/CVE-2024-21538</name></reference><reference><source>NPM Advisory reference: </source><url>https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-8366349</url><name>https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-8366349</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/moxystudio/node-cross-spawn/commit/d35c865b877d2f9ded7c1ed87521c2fdb689c8dd</url><name>https://github.com/moxystudio/node-cross-spawn/commit/d35c865b877d2f9ded7c1ed87521c2fdb689c8dd</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:cross-spawn:\&gt;\=7.0.0\&lt;7.0.5:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>db.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/config/db.js</filePath><md5>d92487d1fc97d79f500c371f9874d1f4</md5><sha1>ac4b88d7e020e77abf6daf56f58d6450a7a411ca</sha1><sha256>70ae895aba61071aff1085607aa2cf637e4a24c4936732097d26804e70a49773</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>diff:4.0.2</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?diff</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>diff</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>diff</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.0.2</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/diff@4.0.2</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-73rr-hh4g-fpgx</name><severity unscored="true">low</severity><cwes><cwe>CWE-400</cwe><cwe>CWE-1333</cwe></cwes><description>### Impact
+
+Attempting to parse a patch whose filename headers contain the line break characters `\r`, `\u2028`, or `\u2029` can cause the `parsePatch` method to enter an infinite loop. It then consumes memory without limit until the process crashes due to running out of memory.
+
+Applications are therefore likely to be vulnerable to a denial-of-service attack if they call `parsePatch` with a user-provided patch as input. A large payload is not needed to trigger the vulnerability, so size limits on user input do not provide any protection. Furthermore, some applications may be vulnerable even when calling `parsePatch` on a patch generated by the application itself if the user is nonetheless able to control the filename headers (e.g. by directly providing the filenames of the files to be diffed).
+
+The `applyPatch` method is similarly affected if (and only if) called with a string representation of a patch as an argument, since under the hood it parses that string using `parsePatch`. Other methods of the library are unaffected.
+
+Finally, a second and lesser bug - a ReDOS - also exhibits when those same line break characters are present in a patch&apos;s *patch* header (also known as its &quot;leading garbage&quot;). A maliciously-crafted patch header of length *n* can take `parsePatch` O(*n*³) time to parse.
+
+### Patches
+
+All vulnerabilities described are fixed in v8.0.3.
+
+### Workarounds
+
+If using a version of jsdiff earlier than v8.0.3, do not attempt to parse patches that contain any of these characters: `\r`, `\u2028`, or `\u2029`.
+
+### References
+
+PR that fixed the bug: https://github.com/kpdecker/jsdiff/pull/649
+
+
+### CVE Notes
+
+Note that although the advisory describes two bugs, they each enable exactly the same attack vector (that an attacker who controls input to `parsePatch` can cause a DOS). Fixing one bug without fixing the other therefore does not fix the vulnerability and does not provide any security benefit. Therefore we assume that the bugs cannot possibly constitute Independently Fixable Vulnerabilities in the sense of CVE CNA rule 4.2.11, but rather that this advisory is properly construed under the rules as describing a single Vulnerability.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/kpdecker/jsdiff/commit/15a1585230748c8ae6f8274c202e0c87309142f5</url><name>https://github.com/kpdecker/jsdiff/commit/15a1585230748c8ae6f8274c202e0c87309142f5</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/kpdecker/jsdiff/issues/653</url><name>https://github.com/kpdecker/jsdiff/issues/653</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/kpdecker/jsdiff/pull/649</url><name>https://github.com/kpdecker/jsdiff/pull/649</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-24001</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-24001</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-73rr-hh4g-fpgx</url><name>https://github.com/advisories/GHSA-73rr-hh4g-fpgx</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/kpdecker/jsdiff/security/advisories/GHSA-73rr-hh4g-fpgx</url><name>https://github.com/kpdecker/jsdiff/security/advisories/GHSA-73rr-hh4g-fpgx</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:diff:\&gt;\=4.0.0\&lt;4.0.4:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>flatted:3.2.9</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?flatted</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>flatted</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>flatted</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>3.2.9</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/flatted@3.2.9</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-25h7-pfq9-p65f</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-674</cwe></cwes><description>## Summary
+
+flatted&apos;s `parse()` function uses a recursive `revive()` phase to resolve circular references in deserialized JSON. When given a crafted payload with deeply nested or self-referential `$` indices, the recursion depth is unbounded, causing a stack overflow that crashes the Node.js process.
+
+## Impact
+
+Denial of Service (DoS). Any application that passes untrusted input to `flatted.parse()` can be crashed by an unauthenticated attacker with a single request.
+
+flatted has ~87M weekly npm downloads and is used as the circular-JSON serialization layer in many caching and logging libraries.
+
+## Proof of Concept
+
+```javascript
+const flatted = require(&apos;flatted&apos;);
+
+// Build deeply nested circular reference chain
+const depth = 20000;
+const arr = new Array(depth + 1);
+arr[0] = &apos;{&quot;a&quot;:&quot;1&quot;}&apos;;
+for (let i = 1; i &lt;= depth; i++) {
+  arr[i] = `{&quot;a&quot;:&quot;${i + 1}&quot;}`;
+}
+arr[depth] = &apos;{&quot;a&quot;:&quot;leaf&quot;}&apos;;
+
+const payload = JSON.stringify(arr);
+flatted.parse(payload); // RangeError: Maximum call stack size exceeded
+```
+
+## Fix
+
+The maintainer has already merged an iterative (non-recursive) implementation in PR #88, converting the recursive `revive()` to a stack-based loop.
+
+## Affected Versions
+
+All versions prior to the PR #88 fix.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/pull/88</url><name>https://github.com/WebReflection/flatted/pull/88</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/commit/7eb65d857e1a40de11c47461cdbc8541449f0606</url><name>https://github.com/WebReflection/flatted/commit/7eb65d857e1a40de11c47461cdbc8541449f0606</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-25h7-pfq9-p65f</url><name>https://github.com/advisories/GHSA-25h7-pfq9-p65f</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-32141</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-32141</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/security/advisories/GHSA-25h7-pfq9-p65f</url><name>https://github.com/WebReflection/flatted/security/advisories/GHSA-25h7-pfq9-p65f</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:flatted:\&lt;3.4.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-rf6f-7fwh-wjgh</name><severity unscored="true">high</severity><cwes><cwe>CWE-1321</cwe><cwe>CWE-915</cwe></cwes><description>---
+  **Summary**
+
+  The parse() function in flatted can use attacker-controlled string values from the parsed JSON as direct array index
+  keys, without validating that they are numeric. Since the internal input buffer is a JavaScript Array, accessing it
+  with the key &quot;\_\_proto\_\_&quot; returns Array.prototype via the inherited getter. This object is then treated as a legitimate
+   parsed value and assigned as a property of the output object, effectively leaking a live reference to Array.prototype
+   to the consumer. Any code that subsequently writes to that property will pollute the global prototype.
+
+  ---
+  **Root Cause**
+
+  File: esm/index.js:29 (identical in cjs/index.js)
+```
+  const resolver = (input, lazy, parsed, $) =&gt; output =&gt; {
+    for (let ke = keys(output), {length} = ke, y = 0; y &lt; length; y++) {
+      const k = ke[y];
+      const value = output[k];    
+      if (value instanceof Primitive) {
+        const tmp = input[value];      // Bug is here
+```
+
+No validation that value is a safe numeric index input is built as a plain Array. JavaScript&apos;s property lookup on arrays traverses the prototype chain for non-numeric  keys. The key &quot;\_\_proto\_\_&quot; resolves to Array.prototype, which:
+
+  - has type &quot;object&quot; → passes the typeof tmp === object guard at line 30
+  - is not in the parsed Set yet → passes the !parsed.has(tmp) guard.
+  - The reference to Array.prototype is then enqueued in lazy and later unconditionally assigned to the output object.
+  ---
+  **Replication Steps**
+```
+  const Flatted = require(&apos;flatted&apos;); 
+  const parsed = Flatted.parse(&apos;[{&quot;x&quot;:&quot;__proto__&quot;}]&apos;);
+  parsed.x.polluted = &apos;pwned&apos;;
+  console.log([].polluted);  // Returns true
+``` 
+ ---
+  **Impact**
+ An attacker can supply a crafted flatted string to parse() that causes the returned object to hold a live reference to Array.prototype, enabling any downstream code that writes to that property to pollute the global prototype chain, potentially causing denial of service or code execution.
+
+  **Recommended solution**
+ Validate that the index string represents an integer within the bounds of input before accessing it:
+
+  // Before (vulnerable)
+  const tmp = input[value];
+
+  // After (safe)
+  const idx = +value;  // coerce boxed String → number
+  const tmp = (Number.isInteger(idx) &amp;&amp; idx &gt;= 0 &amp;&amp; idx &lt; input.length)
+    ? input[idx]
+    : undefined;</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/security/advisories/GHSA-rf6f-7fwh-wjgh</url><name>https://github.com/WebReflection/flatted/security/advisories/GHSA-rf6f-7fwh-wjgh</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-rf6f-7fwh-wjgh</url><name>https://github.com/advisories/GHSA-rf6f-7fwh-wjgh</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/releases/tag/v3.4.2</url><name>https://github.com/WebReflection/flatted/releases/tag/v3.4.2</name></reference><reference><source>NPM Advisory reference: </source><url>https://bugzilla.redhat.com/show_bug.cgi?id=2449872</url><name>https://bugzilla.redhat.com/show_bug.cgi?id=2449872</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:13826</url><name>https://access.redhat.com/errata/RHSA-2026:13826</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/WebReflection/flatted/commit/885ddcc33cf9657caf38c57c7be45ae1c5272802</url><name>https://github.com/WebReflection/flatted/commit/885ddcc33cf9657caf38c57c7be45ae1c5272802</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/security/cve/CVE-2026-33228</url><name>https://access.redhat.com/security/cve/CVE-2026-33228</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:34342</url><name>https://access.redhat.com/errata/RHSA-2026:34342</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:9742</url><name>https://access.redhat.com/errata/RHSA-2026:9742</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-33228</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-33228</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:flatted:\&lt;\=3.4.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>formidable:2.1.2</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?formidable</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>formidable</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>formidable</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>2.1.2</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/formidable@2.1.2</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-75v8-2h7p-7m2m</name><severity unscored="true">low</severity><cvssV3><baseScore>3.0999999046325684</baseScore><attackVector>NETWORK</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>LOW</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>LOW</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>LOW</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-338</cwe></cwes><description>Formidable (aka node-formidable) 2.x before 2.1.3 and 3.x before 3.5.3 relies on hexoid to prevent guessing of filenames for untrusted executable content; however, hexoid is documented as not &quot;cryptographically secure.&quot; (Also, there is a scenario in which only the last two characters of a hexoid string need to be guessed, but this is not often relevant.) NOTE: this does not imply that, in a typical use case, attackers will be able to exploit any hexoid behavior to upload and execute their own content.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/node-formidable/formidable/commit/37a3e89fca1ed68ec674a539f13aafd62221ddaa</url><name>https://github.com/node-formidable/formidable/commit/37a3e89fca1ed68ec674a539f13aafd62221ddaa</name></reference><reference><source>NPM Advisory reference: </source><url>https://www.npmjs.com/package/formidable/v/2.1.3</url><name>https://www.npmjs.com/package/formidable/v/2.1.3</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-75v8-2h7p-7m2m</url><name>https://github.com/advisories/GHSA-75v8-2h7p-7m2m</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/node-formidable/formidable/commit/022c2c5577dfe14d2947f10909d81b03b6070bf5</url><name>https://github.com/node-formidable/formidable/commit/022c2c5577dfe14d2947f10909d81b03b6070bf5</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/node-formidable/formidable/blob/d0fbec13edc8add54a1afb9ce1a8d3db803f8d47/CHANGELOG.md?plain=1#L10</url><name>https://github.com/node-formidable/formidable/blob/d0fbec13edc8add54a1afb9ce1a8d3db803f8d47/CHANGELOG.md?plain=1#L10</name></reference><reference><source>NPM Advisory reference: </source><url>https://www.npmjs.com/package/formidable/v/3.5.3</url><name>https://www.npmjs.com/package/formidable/v/3.5.3</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-46653</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-46653</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/zast-ai/vulnerability-reports/blob/main/formidable/file_upload/report.md</url><name>https://github.com/zast-ai/vulnerability-reports/blob/main/formidable/file_upload/report.md</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:formidable:\&gt;\=2.1.0\&lt;2.1.3:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>helper-objects.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/tests/utils/helper-objects.js</filePath><md5>2ce221fa876740b2468d9ca0b0843d36</md5><sha1>aef579bf7a6de1fa2d38796485e3d87da3f7512c</sha1><sha256>7c1ad29a0ed4ab8e2299595aa435e49739ebb4a5ad9eaef83c7f6c3f7a04bfdc</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>index.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/api/index.js</filePath><md5>33110c36687d8da5fc4629bcbe1b0d79</md5><sha1>2b443b0a1404a283ba8dbc32552ba4e9a168365e</sha1><sha256>8bc2d47541a4b8ddc87390783d23040e3bb05796c31ab17eddbf72a26ead5998</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>js-yaml:4.1.0</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?js-yaml</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>js-yaml</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>js-yaml</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.1.0</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/js-yaml@4.1.0</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-2883-xcg3-v3hh</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-400</cwe><cwe>CWE-407</cwe></cwes><description>## Summary
+
+`maxTotalMergeKeys` does not count empty mappings. An attacker can repeatedly merge a large sequence of them and consume significant CPU without reaching the configured limit.
+
+## Example
+
+```yaml
+arr: &amp;arr [{}, {}, {}, ...] # N empty mappings
+targets:
+  - &lt;&lt;: *arr                # repeated K times
+```
+
+For every target, the loader iterates all `N` elements of `arr`. This results in `O(N * K)` work while `totalMergeKeys` remains unchanged.
+
+## PoC
+
+```js
+import { performance } from &apos;node:perf_hooks&apos;
+import { load, YAML11_SCHEMA } from &apos;js-yaml&apos;
+
+const n = 20000
+
+const src =
+  &apos;arr: &amp;arr [&apos; + &apos;{},&apos;.repeat(n).slice(0, -1) + &apos;]\n&apos; +
+  &apos;targets:\n&apos; +
+  &apos;  - &lt;&lt;: *arr\n&apos;.repeat(n)
+
+const started = performance.now()
+
+load(src, { schema: YAML11_SCHEMA })
+
+console.log(`${(performance.now() - started).toFixed(1)} ms`)
+```
+
+Observed results:
+
+| N | YAML size | Time |
+|---:|---:|---:|
+| 800 | ~13 KB | ~20 ms |
+| 3200 | ~50 KB | ~180 ms |
+| 20000 | ~500 KB | ~13 s |
+
+## Impact
+
+An attacker can submit a relatively small YAML document that causes prolonged CPU consumption despite the default `maxTotalMergeKeys` limit.
+
+## Fix
+
+Count each merge-source mapping as one budget unit, in addition to counting its keys.
+
+## Difference with v5
+
+In v3 &amp; v4, merge is enabled by default. So, the severity score is higher.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-2883-xcg3-v3hh</url><name>https://github.com/advisories/GHSA-2883-xcg3-v3hh</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/security/advisories/GHSA-2883-xcg3-v3hh</url><name>https://github.com/nodeca/js-yaml/security/advisories/GHSA-2883-xcg3-v3hh</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/3485bc06ff8a0251505f44a00414d90df2466639</url><name>https://github.com/nodeca/js-yaml/commit/3485bc06ff8a0251505f44a00414d90df2466639</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/6a8e05f9a485188ed730ac81e81ae221352ef480</url><name>https://github.com/nodeca/js-yaml/commit/6a8e05f9a485188ed730ac81e81ae221352ef480</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/releases/tag/3.15.2</url><name>https://github.com/nodeca/js-yaml/releases/tag/3.15.2</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-84375</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-84375</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/d90b6612a5a84385bdcb556c44578eac76dc0f6b</url><name>https://github.com/nodeca/js-yaml/commit/d90b6612a5a84385bdcb556c44578eac76dc0f6b</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/pull/797</url><name>https://github.com/nodeca/js-yaml/pull/797</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/releases/tag/4.3.2</url><name>https://github.com/nodeca/js-yaml/releases/tag/4.3.2</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:js-yaml:\&gt;\=4.0.0\&lt;4.3.2:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-52cp-r559-cp3m</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-400</cwe><cwe>CWE-407</cwe></cwes><description>### Impact
+
+js-yaml can spend quadratic CPU time parsing a document whose size grows only linearly. The issue is triggered by a chain of mappings where each mapping merges the previous one:
+
+```yaml
+a0: &amp;a0 { k0: 0 }
+a1: &amp;a1 { &lt;&lt;: *a0, k1: 1 }
+a2: &amp;a2 { &lt;&lt;: *a1, k2: 2 }
+a3: &amp;a3 { &lt;&lt;: *a2, k3: 3 }
+...
+b: *aN
+```
+
+For each new mapping, the loader has to enumerate the keys inherited from the previous mapping. With N chained mappings, this results in roughly 1 + 2 + ... + N merged-key visits, i.e., O(N^2) work for O(N) input size.
+
+### PoC
+
+From N = 4000 delay become &gt; 1s (doc size &lt; 100K)
+
+```js
+import { performance } from &apos;node:perf_hooks&apos;
+import { Buffer } from &apos;node:buffer&apos;
+import { load, YAML11_SCHEMA } from &apos;js-yaml&apos;
+
+const n = Number(process.argv[2] || 4000)
+
+function makeMergeChain (count) {
+  const lines = [&apos;a0: &amp;a0 { k0: 0 }&apos;]
+
+  for (let i = 1; i &lt; count; i++) {
+    lines.push(`a${i}: &amp;a${i} { &lt;&lt;: *a${i - 1}, k${i}: ${i} }`)
+  }
+
+  lines.push(`b: *a${count - 1}`)
+  return `${lines.join(&apos;\n&apos;)}\n`
+}
+
+const source = makeMergeChain(n)
+
+console.log(source.split(&apos;\n&apos;).slice(0, 8).join(&apos;\n&apos;))
+console.log(&apos;...&apos;)
+console.log(source.split(&apos;\n&apos;).slice(-4).join(&apos;\n&apos;))
+console.log()
+console.log(`N: ${n}`)
+console.log(`YAML size: ${Buffer.byteLength(source)} bytes`)
+
+const started = performance.now()
+const result = load(source, { schema: YAML11_SCHEMA })
+const elapsed = performance.now() - started
+
+console.log(`parse time: ${elapsed.toFixed(1)} ms`)
+console.log(`top-level keys: ${Object.keys(result).length}`)
+console.log(`b keys: ${Object.keys(result.b).length}`)
+```
+
+### Patches
+
+Fix released. The most robust protection is to limit the total number of merged keys per parse call. This should close all past and future edge cases with merge. The default 10K-key limit should be okay in most cases.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/releases/tag/3.15.0</url><name>https://github.com/nodeca/js-yaml/releases/tag/3.15.0</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/59423c6f8cdc78742ac00e25a4dd39ef16b702e4</url><name>https://github.com/nodeca/js-yaml/commit/59423c6f8cdc78742ac00e25a4dd39ef16b702e4</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/24f13e79ee1343a7e30bd6f6c9d9cdbf0ac9b2b7</url><name>https://github.com/nodeca/js-yaml/commit/24f13e79ee1343a7e30bd6f6c9d9cdbf0ac9b2b7</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/releases/tag/4.3.0</url><name>https://github.com/nodeca/js-yaml/releases/tag/4.3.0</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-59869</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-59869</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/security/advisories/GHSA-52cp-r559-cp3m</url><name>https://github.com/nodeca/js-yaml/security/advisories/GHSA-52cp-r559-cp3m</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-52cp-r559-cp3m</url><name>https://github.com/advisories/GHSA-52cp-r559-cp3m</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:js-yaml:\&gt;\=4.0.0\&lt;4.3.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-5p4m-2wfm-xmqj</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-407</cwe></cwes><description># Quadratic CPU consumption in `!!omap` resolution (js-yaml 3.x and 4.x)
+
+## Summary
+
+`resolveYamlOmap()` enforces key uniqueness for `!!omap` sequences with a linear
+scan (`objectKeys.indexOf(...)`) inside the per-element loop, making resolution
+**O(n²)** in the number of entries. A modestly sized YAML document therefore
+consumes disproportionate CPU inside `yaml.load()`, giving a denial of service
+against any consumer that parses untrusted YAML.
+
+`!!omap` is registered in the **default schema**
+(`lib/schema/default.js` → `require(&apos;../type/omap&apos;)`), so a plain
+`yaml.load(untrustedInput)` with no options is affected — no custom schema or
+non-default configuration is required.
+
+**This is the same weakness as CVE-2026-59870 / GHSA-724g-mxrg-4qvm**, which was
+fixed in the 5.x line in 5.2.1. That fix was never backported: both currently
+maintained legacy lines still carry the original implementation.
+
+## Affected versions
+
+| Line | Latest tested | Status |
+|---|---|---|
+| 3.x | **3.15.0** | Affected — `objectKeys.indexOf(pairKey)` at `lib/type/omap.js:29` |
+| 4.x | **4.3.0** | Affected — `objectKeys.indexOf(pairKey)` at `lib/type/omap.js:30` |
+| 5.x | 5.2.2 | **Not affected** — fixed in 5.2.1 (uses a `Set`) |
+
+Both figures are the newest release of each line at the time of writing, so
+this is not a &quot;you are on an old version&quot; issue.
+
+## Details
+
+`lib/type/omap.js` (js-yaml 4.3.0):
+
+```js
+if (objectKeys.indexOf(pairKey) === -1) objectKeys.push(pairKey)
+else return false
+```
+
+`objectKeys` grows by one element per entry, and `Array.prototype.indexOf` is a
+linear scan, so resolving an `n`-entry `!!omap` performs roughly
+`1 + 2 + … + n` comparisons — quadratic in `n`. The work happens synchronously
+inside `yaml.load()`, blocking the event loop for its whole duration.
+
+The 5.x line already solves exactly this by tracking seen keys in a `Set`
+(`src/tag/sequence/omap.ts`):
+
+```ts
+if (carrier.seen.has(key)) return &apos;duplicate key in ordered map&apos;
+carrier.seen.add(key)
+```
+
+## Proof of concept
+
+```js
+// poc.js  —  node poc.js
+const yaml = require(&apos;js-yaml&apos;);
+const doc = n =&gt; &apos;!!omap\n&apos; + Array.from({length: n}, (_, i) =&gt; `- k${i}: ${i}`).join(&apos;\n&apos;) + &apos;\n&apos;;
+
+for (const n of [10000, 20000, 40000, 80000]) {
+  const d = doc(n), t = Date.now();
+  yaml.load(d);                      // default schema, no options
+  console.log(`n=${n} bytes=${d.length} load=${Date.now() - t}ms`);
+}
+```
+
+### Measured (node v20.20.2, default heap, no flags)
+
+**js-yaml 4.3.0**
+
+```
+n=10000  bytes=137787   load=54ms
+n=20000  bytes=297787   load=169ms
+n=40000  bytes=617787   load=646ms
+n=80000  bytes=1257787  load=2607ms
+```
+
+**js-yaml 3.15.0**
+
+```
+n=10000  bytes=137787   load=53ms
+n=20000  bytes=297787   load=166ms
+n=40000  bytes=617787   load=641ms
+n=80000  bytes=1257787  load=2567ms
+```
+
+Runtime grows by a factor of ~4 for each doubling of `n`, which is the
+signature of O(n²) (linear growth would be ~2×).
+
+Scaling further: a **2.48 MB** document with 150,000 entries blocked
+`yaml.load()` for **10.8 seconds**.
+
+## Impact
+
+Any service that parses attacker-influenced YAML with js-yaml 3.x or 4.x can be
+stalled with a small input. Because the loop is synchronous, a single request
+blocks the Node.js event loop and stalls every other request in the process —
+so the amplification is per-process, not just per-request.
+
+Suggested severity: consistent with **CVE-2026-59870** (the same weakness in
+5.x), i.e. Availability-only impact, network attack vector, no privileges or
+user interaction required.
+
+## Suggested fix
+
+Mirror the 5.x fix — replace the linear scan with a `Set`:
+
+```js
+// lib/type/omap.js
+const seen = new Set()
+// ...
+if (seen.has(pairKey)) return false
+seen.add(pairKey)
+```
+
+This preserves the existing duplicate-key rejection semantics exactly while
+making resolution O(n). A `maxOmapLength`-style cap would also work, but the
+`Set` matches what 5.x already ships and requires no new option.
+
+## References
+
+- CVE-2026-59870 / GHSA-724g-mxrg-4qvm — same weakness in 5.0.0–5.2.0, fixed in 5.2.1
+- `lib/type/omap.js` (3.x, 4.x) — the affected resolver
+- `lib/schema/default.js` — registers `!!omap` in the default schema
+
+## Discovery
+
+Found by an automated static-analysis and executed-proof-of-concept scanner run
+against js-yaml 4.2.0, then manually verified against 3.15.0 and 4.3.0 by
+executing the proof of concept above. All timings in this report were measured
+on the **current** releases of each line, not on the version originally scanned.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/security/advisories/GHSA-5p4m-2wfm-xmqj</url><name>https://github.com/nodeca/js-yaml/security/advisories/GHSA-5p4m-2wfm-xmqj</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-5p4m-2wfm-xmqj</url><name>https://github.com/advisories/GHSA-5p4m-2wfm-xmqj</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:js-yaml:\&gt;\=4.0.0\&lt;4.3.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-h67p-54hq-rp68</name><severity unscored="true">moderate</severity><cvssV3><baseScore>5.300000190734863</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>LOW</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-407</cwe></cwes><description>### Summary
+A crafted YAML document can trigger algorithmic CPU exhaustion in `js-yaml` merge-key processing (`&lt;&lt;`) by repeating the same alias many times in a merge sequence.  
+This causes quadratic parse-time behavior relative to input size and can block a Node.js worker/event loop for seconds with a relatively small payload (tens of KB), resulting in denial of service.
+
+### Details
+The issue is in merge handling inside `lib/loader.js`:
+
+- `storeMappingPair(...)` iterates every element of a merge sequence when key tag is `tag:yaml.org,2002:merge`.
+- For each element, it calls `mergeMappings(...)`.
+- `mergeMappings(...)` computes `Object.keys(source)` and performs `_hasOwnProperty.call(destination, key)` checks for each key.
+
+When input is of the form:
+
+a: &amp;a {k0:0, k1:0, ..., kK:0}
+b: {&lt;&lt;: [*a, *a, *a, ... repeated M times ...]}
+all *a entries refer to the same anchored object. After the first merge, subsequent merges are semantically no-ops, but the parser still reprocesses all keys each time.
+Resulting work is O(K * M), while input size is O(K + M), giving quadratic scaling as payload grows.
+Relevant code path:
+lib/loader.js in storeMappingPair(...) merge branch (keyTag === &apos;tag:yaml.org,2002:merge&apos;)
+lib/loader.js mergeMappings(...)
+
+
+### Root cause
+File:       lib/loader.js
+Function:   storeMappingPair(state, _result, overridableKeys, keyTag, keyNode,
+                             valueNode, startLine, startLineStart, startPos)
+Lines:      ~359-366
+
+    if (keyTag === &apos;tag:yaml.org,2002:merge&apos;) {
+      if (Array.isArray(valueNode)) {
+        for (index = 0, quantity = valueNode.length; index &lt; quantity; index += 1) {
+          mergeMappings(state, _result, valueNode[index], overridableKeys);
+        }
+      } else {
+        mergeMappings(state, _result, valueNode, overridableKeys);
+      }
+    }
+
+When the merge value is a sequence (YAML 1.1 &lt;&lt;: [ *a, *a, ... ]), each element
+is handed to mergeMappings() without deduplication. mergeMappings() then does
+
+    sourceKeys = Object.keys(source);
+    for (index = 0; index &lt; sourceKeys.length; index += 1) {
+      key = sourceKeys[index];
+      if (!_hasOwnProperty.call(destination, key)) {
+        setProperty(destination, key, source[key]);
+        overridableKeys[key] = true;
+      }
+    }
+
+Every alias reference in the sequence resolves (by design) to the SAME object
+via state.anchorMap. After the first merge, every subsequent merge of that same
+reference is a pure no-op semantically, but still performs:
+
+  * one Object.keys(source) call (O(K))
+  * K _hasOwnProperty.call checks on the destination
+
+Total: M * K hasOwnProperty checks + M Object.keys allocations, while the final
+object and all observable side effects are identical to a single merge.
+
+YAML semantics for `&lt;&lt;:` are idempotent and commutative over duplicate sources,
+so collapsing duplicates preserves behavior exactly; this isn&apos;t a spec trade-off.
+
+
+### PoC
+Environment:
+js-yaml version: 4.1.1
+Node.js: v24.5.0
+Platform: arm64 macOS (reproduced consistently)
+Reproduction script:
+Create many keys in one anchored map (&amp;a).
+Merge that same alias repeatedly via &lt;&lt;: [*a, *a, ...].
+Measure parse time and compare with control payload using single merge (&lt;&lt;: *a).
+Observed repeated runs (same machine):
+K=M=1000, input 9,909 bytes: ~33–36 ms
+K=M=2000, input 20,909 bytes: ~121–123 ms
+K=M=4000, input 42,909 bytes: ~524–537 ms
+K=M=6000, input 64,909 bytes: ~1,608–1,829 ms
+K=M=8000, input 86,909 bytes: ~3,395–3,565 ms
+Control (single merge, similar key counts):
+K=2000: ~1–2 ms
+K=4000: ~3 ms
+K=8000: ~5 ms
+Also verified: repeated-merge output equals single-merge output (same key count and same JSON), confirming excess time is redundant computation.
+
+
+### Impact
+This is a denial-of-service vulnerability (CPU exhaustion / algorithmic complexity).
+Any service parsing untrusted YAML with js-yaml can be impacted, including API backends, CI tools, config processors, and automation services. An attacker can submit crafted YAML to significantly increase CPU time and reduce availability.
+
+### Suggested fix:
+Dedupe the merge source list by reference before invoking mergeMappings. Any of
+the following are minimal and preserve YAML 1.1 merge semantics:
+
+dedupe in storeMappingPair:
+
+    if (keyTag === &apos;tag:yaml.org,2002:merge&apos;) {
+      if (Array.isArray(valueNode)) {
+        var seen = new Set();
+        for (index = 0, quantity = valueNode.length; index &lt; quantity; index += 1) {
+          var src = valueNode[index];
+          if (seen.has(src)) continue;   // idempotent; skip redundant alias
+          seen.add(src);
+          mergeMappings(state, _result, src, overridableKeys);
+        }
+      } else {
+        mergeMappings(state, _result, valueNode, overridableKeys);
+      }
+    }</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/security/advisories/GHSA-h67p-54hq-rp68</url><name>https://github.com/nodeca/js-yaml/security/advisories/GHSA-h67p-54hq-rp68</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-53550</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-53550</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-h67p-54hq-rp68</url><name>https://github.com/advisories/GHSA-h67p-54hq-rp68</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:js-yaml:\&gt;\=4.0.0\&lt;\=4.1.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-mh29-5h37-fv8m</name><severity unscored="true">moderate</severity><cvssV3><baseScore>5.300000190734863</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>LOW</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1321</cwe></cwes><description>### Impact
+
+In js-yaml 4.1.0, 4.0.0, and 3.14.1 and below, it&apos;s possible for an attacker to modify the prototype of the result of a parsed yaml document via prototype pollution (`__proto__`). All users who parse untrusted yaml documents may be impacted.
+
+### Patches
+
+Problem is patched in js-yaml 4.1.1 and 3.14.2.
+
+### Workarounds
+
+You can protect against this kind of attack on the server by using `node --disable-proto=delete` or `deno` (in Deno, pollution protection is on by default).
+
+### References
+
+https://cheatsheetseries.owasp.org/cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.html</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/383665ff4248ec2192d1274e934462bb30426879</url><name>https://github.com/nodeca/js-yaml/commit/383665ff4248ec2192d1274e934462bb30426879</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-mh29-5h37-fv8m</url><name>https://github.com/advisories/GHSA-mh29-5h37-fv8m</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/commit/5278870a17454fe8621dbd8c445c412529525266</url><name>https://github.com/nodeca/js-yaml/commit/5278870a17454fe8621dbd8c445c412529525266</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/issues/730#issuecomment-3549635876</url><name>https://github.com/nodeca/js-yaml/issues/730#issuecomment-3549635876</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2025-64718</url><name>https://nvd.nist.gov/vuln/detail/CVE-2025-64718</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/nodeca/js-yaml/security/advisories/GHSA-mh29-5h37-fv8m</url><name>https://github.com/nodeca/js-yaml/security/advisories/GHSA-mh29-5h37-fv8m</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:js-yaml:\&gt;\=4.0.0\&lt;4.1.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>lodash:4.17.23</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?lodash</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>lodash</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>lodash</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.17.23</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/lodash@4.17.23</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-r5fr-rjxr-66jc</name><severity unscored="true">high</severity><cvssV3><baseScore>8.100000381469727</baseScore><attackVector>NETWORK</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>HIGH</confidentialityImpact><integrityImpact>HIGH</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-94</cwe></cwes><description>### Impact
+
+The fix for [CVE-2021-23337](https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the `variable` option in `_.template` but did not apply the same validation to `options.imports` key names. Both paths flow into the same `Function()` constructor sink.
+
+When an application passes untrusted input as `options.imports` key names, an attacker can inject default-parameter expressions that execute arbitrary code at template compilation time.
+
+Additionally, `_.template` uses `assignInWith` to merge imports, which enumerates inherited properties via `for..in`. If `Object.prototype` has been polluted by any other vector, the polluted keys are copied into the imports object and passed to `Function()`.
+
+### Patches
+
+Users should upgrade to version 4.18.0.
+
+The fix applies two changes:
+1. Validate `importsKeys` against the existing `reForbiddenIdentifierChars` regex (same check already used for the `variable` option)
+2. Replace `assignInWith` with `assignWith` when merging imports, so only own properties are enumerated
+
+### Workarounds
+
+Do not pass untrusted input as key names in `options.imports`. Only use developer-controlled, static key names.</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-4800</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-4800</name></reference><reference><source>NPM Advisory reference: </source><url>https://cna.openjsf.org/security-advisories.html</url><name>https://cna.openjsf.org/security-advisories.html</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-35jh-r3h4-6jhm</url><name>https://github.com/advisories/GHSA-35jh-r3h4-6jhm</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-r5fr-rjxr-66jc</url><name>https://github.com/advisories/GHSA-r5fr-rjxr-66jc</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/lodash/lodash/security/advisories/GHSA-r5fr-rjxr-66jc</url><name>https://github.com/lodash/lodash/security/advisories/GHSA-r5fr-rjxr-66jc</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c</url><name>https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:lodash:\&gt;\=4.0.0\&lt;\=4.17.23:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-f23m-r3pf-42rh</name><severity unscored="true">moderate</severity><cvssV3><baseScore>6.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>LOW</integrityImpact><availabilityImpact>LOW</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1321</cwe></cwes><description>### Impact
+
+Lodash versions 4.17.23 and earlier are vulnerable to prototype pollution in the `_.unset` and `_.omit` functions. The fix for [CVE-2025-13465](https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg) only guards against string key members, so an attacker can bypass the check by passing array-wrapped path segments. This allows deletion of properties from built-in prototypes such as `Object.prototype`, `Number.prototype`, and `String.prototype`.
+
+The issue permits deletion of prototype properties but does not allow overwriting their original behavior.
+
+### Patches
+
+This issue is patched in 4.18.0.
+
+### Workarounds
+
+None. Upgrade to the patched version.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh</url><name>https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-2950</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-2950</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-f23m-r3pf-42rh</url><name>https://github.com/advisories/GHSA-f23m-r3pf-42rh</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg</url><name>https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:lodash:\&lt;\=4.17.23:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="true"><fileName>micromatch:4.0.5</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?micromatch</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><relatedDependencies><relatedDependency isVirtual="true"><fileName>micromatch:4.0.5</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?micromatch</filePath><sha256></sha256><sha1></sha1><md5></md5><identifiers><package><id>pkg:npm/micromatch@4.0.5</id></package></identifiers></relatedDependency></relatedDependencies><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>micromatch</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>micromatch</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>4.0.5</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/micromatch@4.0.5</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-952p-6rrq-rcjv</name><severity unscored="true">moderate</severity><cvssV3><baseScore>5.300000190734863</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>LOW</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>The NPM package `micromatch` prior to version 4.0.8 is vulnerable to Regular Expression Denial of Service (ReDoS). The vulnerability occurs in `micromatch.braces()` in `index.js` because the pattern `.*` will greedily match anything. By passing a malicious payload, the pattern matching will keep backtracking to the input while it doesn&apos;t find the closing bracket. As the input size increases, the consumption time will also increase until it causes the application to hang or slow down. There was a merged fix but further testing shows the issue persisted prior to https://github.com/micromatch/micromatch/pull/266. This issue should be mitigated by using a safe pattern that won&apos;t start backtracking the regular expression due to greedy matching.
+</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/blob/2c56a8604b68c1099e7bc0f807ce0865a339747a/index.js#L448</url><name>https://github.com/micromatch/micromatch/blob/2c56a8604b68c1099e7bc0f807ce0865a339747a/index.js#L448</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/pull/247</url><name>https://github.com/micromatch/micromatch/pull/247</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/commit/500d5d6f42f0e8dfa1cb5464c6cb420b1b6aaaa0</url><name>https://github.com/micromatch/micromatch/commit/500d5d6f42f0e8dfa1cb5464c6cb420b1b6aaaa0</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/pull/266</url><name>https://github.com/micromatch/micromatch/pull/266</name></reference><reference><source>NPM Advisory reference: </source><url>https://devhub.checkmarx.com/cve-details/CVE-2024-4067</url><name>https://devhub.checkmarx.com/cve-details/CVE-2024-4067</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/releases/tag/4.0.8</url><name>https://github.com/micromatch/micromatch/releases/tag/4.0.8</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/issues/243</url><name>https://github.com/micromatch/micromatch/issues/243</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/micromatch/commit/03aa8052171e878897eee5d7bb2ae0ae83ec2ade</url><name>https://github.com/micromatch/micromatch/commit/03aa8052171e878897eee5d7bb2ae0ae83ec2ade</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2024-4067</url><name>https://nvd.nist.gov/vuln/detail/CVE-2024-4067</name></reference><reference><source>NPM Advisory reference: </source><url>https://advisory.checkmarx.net/advisory/CVE-2024-4067</url><name>https://advisory.checkmarx.net/advisory/CVE-2024-4067</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-952p-6rrq-rcjv</url><name>https://github.com/advisories/GHSA-952p-6rrq-rcjv</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:micromatch:\&lt;4.0.8:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>middleware.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/utils/middleware.js</filePath><md5>c670782245884e2c0f90fdbb8a96510b</md5><sha1>7e1de30c360b1799012451b1ebb60b576c7e6b24</sha1><sha256>addffe138a4f75555d1874a773ba7434f31f45b34a4f9473122c50d5fa47b260</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>picomatch:2.3.1</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/package-lock.json?picomatch</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>picomatch</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>picomatch</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>2.3.1</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/picomatch@2.3.1</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-c2c7-rcm5-vvqj</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1333</cwe></cwes><description>### Impact
+`picomatch` is vulnerable to Regular Expression Denial of Service (ReDoS) when processing crafted extglob patterns. Certain patterns using extglob quantifiers such as `+()` and `*()`, especially when combined with overlapping alternatives or nested extglobs, are compiled into regular expressions that can exhibit catastrophic backtracking on non-matching input.
+
+Examples of problematic patterns include `+(a|aa)`, `+(*|?)`, `+(+(a))`, `*(+(a))`, and `+(+(+(a)))`. In local reproduction, these patterns caused multi-second event-loop blocking with relatively short inputs. For example, `+(a|aa)` compiled to `^(?:(?=.)(?:a|aa)+)$` and took about 2 seconds to reject a 41-character non-matching input, while nested patterns such as `+(+(a))` and `*(+(a))` took around 29 seconds to reject a 33-character input on a modern M1 MacBook.
+
+Applications are impacted when they allow untrusted users to supply glob patterns that are passed to `picomatch` for compilation or matching. In those cases, an attacker can cause excessive CPU consumption and block the Node.js event loop, resulting in a denial of service. Applications that only use trusted, developer-controlled glob patterns are much less likely to be exposed in a security-relevant way.
+
+### Patches
+This issue is fixed in picomatch 4.0.4, 3.0.2 and 2.3.2.
+
+Users should upgrade to one of these versions or later, depending on their supported release line.
+
+### Workarounds
+If upgrading is not immediately possible, avoid passing untrusted glob patterns to `picomatch`.
+
+Possible mitigations include:
+- disable extglob support for untrusted patterns by using `noextglob: true`
+- reject or sanitize patterns containing nested extglobs or extglob quantifiers such as `+()` and `*()`
+- enforce strict allowlists for accepted pattern syntax
+- run matching in an isolated worker or separate process with time and resource limits
+- apply application-level request throttling and input validation for any endpoint that accepts glob patterns
+
+### Resources
+- Picomatch repository: https://github.com/micromatch/picomatch
+- `lib/parse.js` and `lib/constants.js` are involved in generating the vulnerable regex forms
+- Comparable ReDoS precedent: CVE-2024-4067 (`micromatch`)
+- Comparable generated-regex precedent: CVE-2024-45296 (`path-to-regexp`)</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-c2c7-rcm5-vvqj</url><name>https://github.com/advisories/GHSA-c2c7-rcm5-vvqj</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/picomatch/commit/5eceecd27543b8e056b9307d69e105ea03618a7d</url><name>https://github.com/micromatch/picomatch/commit/5eceecd27543b8e056b9307d69e105ea03618a7d</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-33671</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-33671</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/picomatch/security/advisories/GHSA-c2c7-rcm5-vvqj</url><name>https://github.com/micromatch/picomatch/security/advisories/GHSA-c2c7-rcm5-vvqj</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:picomatch:\&lt;2.3.2:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-3v7f-55p6-f55p</name><severity unscored="true">moderate</severity><cvssV3><baseScore>5.300000190734863</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>LOW</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-1321</cwe></cwes><description>### Impact
+picomatch is vulnerable to a **method injection vulnerability (CWE-1321)** affecting the `POSIX_REGEX_SOURCE` object. Because the object inherits from `Object.prototype`, specially crafted POSIX bracket expressions (e.g., `[[:constructor:]]`) can reference inherited method names. These methods are implicitly converted to strings and injected into the generated regular expression.
+
+This leads to **incorrect glob matching behavior (integrity impact)**, where patterns may match unintended filenames. The issue does **not enable remote code execution**, but it can cause security-relevant logic errors in applications that rely on glob matching for filtering, validation, or access control.
+
+All users of affected `picomatch` versions that process untrusted or user-controlled glob patterns are potentially impacted.
+
+### Patches
+
+This issue is fixed in picomatch 4.0.4, 3.0.2 and 2.3.2.
+
+Users should upgrade to one of these versions or later, depending on their supported release line.
+
+### Workarounds
+
+If upgrading is not immediately possible, avoid passing untrusted glob patterns to picomatch.
+
+Possible mitigations include:
+- Sanitizing or rejecting untrusted glob patterns, especially those containing POSIX character classes like `[[:...:]]`.
+- Avoiding the use of POSIX bracket expressions if user input is involved.
+- Manually patching the library by modifying `POSIX_REGEX_SOURCE` to use a null prototype:
+
+  ```js
+  const POSIX_REGEX_SOURCE = {
+    __proto__: null,
+    alnum: &apos;a-zA-Z0-9&apos;,
+    alpha: &apos;a-zA-Z&apos;,
+    // ... rest unchanged
+  };
+  
+### Resources
+
+- fix for similar issue: https://github.com/micromatch/picomatch/pull/144
+- picomatch repository https://github.com/micromatch/picomatch</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/picomatch/commit/4516eb521f13a46b2fe1a1d2c9ef6b20ddc0e903</url><name>https://github.com/micromatch/picomatch/commit/4516eb521f13a46b2fe1a1d2c9ef6b20ddc0e903</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-33672</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-33672</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-3v7f-55p6-f55p</url><name>https://github.com/advisories/GHSA-3v7f-55p6-f55p</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/micromatch/picomatch/security/advisories/GHSA-3v7f-55p6-f55p</url><name>https://github.com/micromatch/picomatch/security/advisories/GHSA-3v7f-55p6-f55p</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:picomatch:\&lt;2.3.2:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>post.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/models/post.js</filePath><md5>520a5d5841a976abcf2fb412343a61f8</md5><sha1>034b7835aae45a749458b50d02475c8166e763df</sha1><sha256>1a5ab298a53fe9c76debf2da845e919dfa9cc2fbd4a422274e387b558a63d15e</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>postcss-selector-parser:6.0.13</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?postcss-selector-parser</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>postcss-selector-parser</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>postcss-selector-parser</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>6.0.13</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/postcss-selector-parser@6.0.13</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-rj75-hqrm-r3gf</name><severity unscored="true">moderate</severity><cvssV3><baseScore>5.900000095367432</baseScore><attackVector>NETWORK</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-400</cwe><cwe>CWE-407</cwe></cwes><description>### Impact
+
+`.` and `#` are not word delimiters in the tokenizer, so a flat selector such as
+`.a.a.a...` reaches `splitWord()` as a single word token carrying n class or id
+indexes. Three passes scanned those index arrays linearly for every index,
+making the parse O(n^2) in the number of indexes rather than in input length:
+`uniqs()`, the `indices.forEach` loop, and the Sass-interpolation filter.
+Parsing a 400 KB flat selector took ~34 s on a modern laptop, fully occupying a
+single thread. A benign selector of identical byte size parses in tens of
+milliseconds, so the cost is driven by the index count, not the input size.
+The nesting depth of such a selector is 0, so the `maxNestingDepth` guard added
+in 7.1.3 offers no protection.
+
+Reachability is deployment dependent. Only consumers that parse untrusted,
+attacker-supplied selectors synchronously in a request path are exposed, for
+example CSS sanitizers, CSS-in-JS services and online playgrounds. Ordinary
+build-time use on trusted sources is not affected.
+
+### Patches
+
+Fixed in 7.1.6. The three passes now use Set membership tests, making parsing
+linear in the number of indexes. There is no behaviour change: parsing is
+byte-identical on a differential corpus of 8413 selectors.
+
+### Workarounds
+
+Cap the size of selectors accepted from untrusted sources before parsing.</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/postcss/postcss-selector-parser/releases/tag/7.1.6</url><name>https://github.com/postcss/postcss-selector-parser/releases/tag/7.1.6</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/postcss/postcss-selector-parser/commit/62b191792df0a0bc56062e5a875bc74aae2a51cd</url><name>https://github.com/postcss/postcss-selector-parser/commit/62b191792df0a0bc56062e5a875bc74aae2a51cd</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-rj75-hqrm-r3gf</url><name>https://github.com/advisories/GHSA-rj75-hqrm-r3gf</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-104844</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-104844</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/postcss/postcss-selector-parser/security/advisories/GHSA-rj75-hqrm-r3gf</url><name>https://github.com/postcss/postcss-selector-parser/security/advisories/GHSA-rj75-hqrm-r3gf</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:postcss-selector-parser:\&lt;7.1.6:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency><dependency isVirtual="false"><fileName>postcss.config.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/postcss.config.js</filePath><md5>c735540bb63936a123bc867d950c9f69</md5><sha1>50423d11f317aef9d5fcfb2563b2a501b344dcd5</sha1><sha256>e32657baf631d7c5f4dc67b4b2ee0ec8e7d5b3c41860e09cddce7c0377cd80bc</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>posts-controller.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/controllers/posts-controller.js</filePath><md5>9129d3981ac3dfb0dfaa579bf141611f</md5><sha1>b613b8e481e04b8088653dd709c1b6a034e77741</sha1><sha256>451f40121bb24d653f634df9fed4cd40e96e55036defbde9470068d9e3f9f047</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>posts-controller.test.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/tests/integration/controllers/posts-controller.test.js</filePath><md5>c599740ffee841e7a52538b708f3fb93</md5><sha1>10e4c19e24f6cfac136a80eea9284cc1ce7ee89a</sha1><sha256>9de533114d00385a4a1752d35052fcf29090f933f08cc440aca97f691158becd</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>posts-controller.test.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/tests/unit/controllers/posts-controller.test.js</filePath><md5>9aa04a3348b275e652c4f5ba093f3269</md5><sha1>f76d617f4e8577d0671046ea8eb4ce5666cc71af</sha1><sha256>17757676a2cd0042a3f70634b9eb1a1f14a00d509351a3ea349568c0316f5a8d</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>posts.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/routes/posts.js</filePath><md5>164051282adc874cf86087b894de9184</md5><sha1>2908cf8b0b4587b302b779fd9fce72a5d20add03</sha1><sha256>e4b9c95237ce33561ed022bbaf0cbe2de6c1b2e806f420538e7d14634f804107</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>redis.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/services/redis.js</filePath><md5>72529dcb65c2d2e92d2c81e32c004c07</md5><sha1>a1a5579dc42bea9681c648879470cc15f3a12fd2</sha1><sha256>f3da54f9b8173dad7d3db067b2ad702d64062ee3b0a4e8d54f2edd6c57076d1b</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>server.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/server.js</filePath><md5>e066f257d00f6b9cce3e022355939f2a</md5><sha1>6900a6f62ae3802103f2cd113c7d59962482f1f9</sha1><sha256>4f07c6bd57a14c14bb2d4efeac048cd89f58a41350033a1154dfb43d46464a2f</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>tailwind.config.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/tailwind.config.js</filePath><md5>d625ed753d8778a5d00bdc6a6f94c02e</md5><sha1>d27755ec854333afd04c48cb6c06900e1e91a2ef</sha1><sha256>7863dcd0edfdb2f63e3240e62e30ffa19156e83e91e315f5d00114ee44eda83d</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>teardown.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/tests/teardown.js</filePath><md5>35629cb4dcf8de2438e06e5618250a92</md5><sha1>1826931eb31129dfd87b0cce23944f89786583ed</sha1><sha256>a8b95ef9b30baecb0660b02c18e36e43ed8204682bb7b70ad8d764f767e493ac</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>user.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/models/user.js</filePath><md5>4053b012e30214b0a91803819e5bca36</md5><sha1>9329f457dc991937979282b077d78f8f3d01f59f</sha1><sha256>f3fa57bc1ef3660defa913fc3f593dd876b1a1b4a65e521d71c816f7f1b679a6</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="false"><fileName>utils.js</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/backend/config/utils.js</filePath><md5>29a2a6fc82c1a40657b04ad2876ee76b</md5><sha1>45b30bda65af9823379bfb3e42ca903f29a984fc</sha1><sha256>581f5ee117d2e29d95094de54a6bfe98cb230d22cb111f2f0afc6dcba61cab92</sha256><evidenceCollected></evidenceCollected></dependency><dependency isVirtual="true"><fileName>ws:8.15.1</fileName><filePath>/var/lib/jenkins/workspace/Wanderlust-CD/frontend/package-lock.json?ws</filePath><md5></md5><sha1></sha1><sha256></sha256><projectReferences><projectReference>package-lock.json: transitive</projectReference></projectReferences><evidenceCollected><evidence type="vendor" confidence="HIGH"><source>package.json</source><name>name</name><value>ws</value></evidence><evidence type="product" confidence="HIGHEST"><source>package.json</source><name>name</name><value>ws</value></evidence><evidence type="version" confidence="HIGHEST"><source>package.json</source><name>version</name><value>8.15.1</value></evidence></evidenceCollected><identifiers><package confidence="HIGHEST"><id>pkg:npm/ws@8.15.1</id></package></identifiers><vulnerabilities><vulnerability source="NPM"><name>GHSA-3h5v-q93c-6h6q</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-476</cwe></cwes><description>### Impact
+
+A request with a number of headers exceeding the [`server.maxHeadersCount`][] threshold could be used to crash a ws server.
+
+### Proof of concept
+
+```js
+const http = require(&apos;http&apos;);
+const WebSocket = require(&apos;ws&apos;);
+
+const wss = new WebSocket.Server({ port: 0 }, function () {
+  const chars = &quot;!#$%&amp;&apos;*+-.0123456789abcdefghijklmnopqrstuvwxyz^_`|~&quot;.split(&apos;&apos;);
+  const headers = {};
+  let count = 0;
+
+  for (let i = 0; i &lt; chars.length; i++) {
+    if (count === 2000) break;
+
+    for (let j = 0; j &lt; chars.length; j++) {
+      const key = chars[i] + chars[j];
+      headers[key] = &apos;x&apos;;
+
+      if (++count === 2000) break;
+    }
+  }
+
+  headers.Connection = &apos;Upgrade&apos;;
+  headers.Upgrade = &apos;websocket&apos;;
+  headers[&apos;Sec-WebSocket-Key&apos;] = &apos;dGhlIHNhbXBsZSBub25jZQ==&apos;;
+  headers[&apos;Sec-WebSocket-Version&apos;] = &apos;13&apos;;
+
+  const request = http.request({
+    headers: headers,
+    host: &apos;127.0.0.1&apos;,
+    port: wss.address().port
+  });
+
+  request.end();
+});
+```
+
+### Patches
+
+The vulnerability was fixed in ws@8.17.1 (https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c) and backported to ws@7.5.10 (https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f), ws@6.2.3 (https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63), and ws@5.2.4 (https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e).
+
+### Workarounds
+
+In vulnerable versions of ws, the issue can be mitigated in the following ways:
+
+1. Reduce the maximum allowed length of the request headers using the [`--max-http-header-size=size`][] and/or the [`maxHeaderSize`][] options so that no more headers than the `server.maxHeadersCount` limit can be sent.
+2. Set `server.maxHeadersCount` to `0` so that no limit is applied.
+
+### Credits
+
+The vulnerability was reported by [Ryan LaPointe](https://github.com/rrlapointe) in https://github.com/websockets/ws/issues/2230.
+
+### References
+
+- https://github.com/advisories/GHSA-3h5v-q93c-6h6q
+- https://www.cve.org/CVERecord?id=CVE-2024-37890
+- https://github.com/websockets/ws/issues/2230
+- https://github.com/websockets/ws/pull/2231
+
+[`--max-http-header-size=size`]: https://nodejs.org/api/cli.html#--max-http-header-sizesize
+[`maxHeaderSize`]: https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener
+[`server.maxHeadersCount`]: https://nodejs.org/api/http.html#servermaxheaderscount</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/issues/2230</url><name>https://github.com/websockets/ws/issues/2230</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-3h5v-q93c-6h6q</url><name>https://github.com/advisories/GHSA-3h5v-q93c-6h6q</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/security/advisories/GHSA-3h5v-q93c-6h6q</url><name>https://github.com/websockets/ws/security/advisories/GHSA-3h5v-q93c-6h6q</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e</url><name>https://github.com/websockets/ws/commit/4abd8f6de4b0b65ef80b3ff081989479ed93377e</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/pull/2231</url><name>https://github.com/websockets/ws/pull/2231</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c</url><name>https://github.com/websockets/ws/commit/e55e5106f10fcbaac37cfa89759e4cc0d073a52c</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63</url><name>https://github.com/websockets/ws/commit/eeb76d313e2a00dd5247ca3597bba7877d064a63</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f</url><name>https://github.com/websockets/ws/commit/22c28763234aa75a7e1b76f5c01c181260d7917f</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:ws:\&gt;\=8.0.0\&lt;8.17.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-96hv-2xvq-fx4p</name><severity unscored="true">high</severity><cvssV3><baseScore>7.5</baseScore><attackVector>NETWORK</attackVector><attackComplexity>LOW</attackComplexity><privilegesRequired>NONE</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>NONE</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>HIGH</availabilityImpact><baseSeverity>HIGH</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-400</cwe><cwe>CWE-1050</cwe><cwe>CWE-770</cwe></cwes><description>### Impact
+
+A high volume of exceptionally small fragments and data chunks can be sent by a peer, with modest network traffic, to force the remote peer into allocating and holding structural wrappers that consume far more memory than the default documented message-size limit, leading to process termination due to OOM.
+
+### Proof of concept
+
+```js
+import { WebSocket, WebSocketServer } from &apos;ws&apos;;
+
+const wss = new WebSocketServer({ port: 0 }, function () {
+  const data = Buffer.alloc(1);
+  const options = { fin: false };
+  const { port } = wss.address();
+  const ws = new WebSocket(`ws://localhost:${port}`);
+
+  ws.on(&apos;open&apos;, function () {
+    (function send() {
+      ws.send(data, options, function (err) {
+        if (err) return;
+        send();
+      });
+    })();
+  });
+
+  ws.on(&apos;error&apos;, console.error);
+  ws.on(&apos;close&apos;, function (code, reason) {
+    console.log(`client close - code: ${code} reason: ${reason.toString()}`);
+  });
+});
+
+wss.on(&apos;connection&apos;, function (ws) {
+  ws.on(&apos;error&apos;, console.error);
+  ws.on(&apos;close&apos;, function (code, reason) {
+    console.log(`server close - code: ${code} reason: ${reason.toString()}`);
+  });
+});
+```
+
+### Patches
+
+The vulnerability was fixed in ws@8.21.0 (https://github.com/websockets/ws/commit/bca91adf15677e47dbe4f959653452727be28b94) and backported to ws@7.5.11 (https://github.com/websockets/ws/commit/fd36cd864fcdf62a08273a99e19a7d975401fee8), ws@6.2.4 (https://github.com/websockets/ws/commit/86d3e8a5fb0246ed373860c5fbb0de88824a27f7), and ws@5.2.5 (https://github.com/websockets/ws/commit/b5372ac67bb97a773727b8e9f5035a8123556d53).
+
+### Workarounds
+
+In vulnerable versions, the issue can be mitigated by lowering the value of the `maxPayload` option if possible.
+
+### Credits
+
+The vulnerability was responsibly disclosed and fixed by [Nadav Magier](https://github.com/Nadav0077).</description><references><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/security/advisories/GHSA-96hv-2xvq-fx4p</url><name>https://github.com/websockets/ws/security/advisories/GHSA-96hv-2xvq-fx4p</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/b5372ac67bb97a773727b8e9f5035a8123556d53</url><name>https://github.com/websockets/ws/commit/b5372ac67bb97a773727b8e9f5035a8123556d53</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33173</url><name>https://access.redhat.com/errata/RHSA-2026:33173</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33163</url><name>https://access.redhat.com/errata/RHSA-2026:33163</name></reference><reference><source>NPM Advisory reference: </source><url>https://bugzilla.redhat.com/show_bug.cgi?id=2489661</url><name>https://bugzilla.redhat.com/show_bug.cgi?id=2489661</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:36754</url><name>https://access.redhat.com/errata/RHSA-2026:36754</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:36820</url><name>https://access.redhat.com/errata/RHSA-2026:36820</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33160</url><name>https://access.redhat.com/errata/RHSA-2026:33160</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/security/cve/CVE-2026-48779</url><name>https://access.redhat.com/security/cve/CVE-2026-48779</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:27171</url><name>https://access.redhat.com/errata/RHSA-2026:27171</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/fd36cd864fcdf62a08273a99e19a7d975401fee8</url><name>https://github.com/websockets/ws/commit/fd36cd864fcdf62a08273a99e19a7d975401fee8</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33183</url><name>https://access.redhat.com/errata/RHSA-2026:33183</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/bca91adf15677e47dbe4f959653452727be28b94</url><name>https://github.com/websockets/ws/commit/bca91adf15677e47dbe4f959653452727be28b94</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/86d3e8a5fb0246ed373860c5fbb0de88824a27f7</url><name>https://github.com/websockets/ws/commit/86d3e8a5fb0246ed373860c5fbb0de88824a27f7</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33574</url><name>https://access.redhat.com/errata/RHSA-2026:33574</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:33155</url><name>https://access.redhat.com/errata/RHSA-2026:33155</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:29197</url><name>https://access.redhat.com/errata/RHSA-2026:29197</name></reference><reference><source>NPM Advisory reference: </source><url>https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48779.json</url><name>https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48779.json</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:26638</url><name>https://access.redhat.com/errata/RHSA-2026:26638</name></reference><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-48779</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-48779</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:34342</url><name>https://access.redhat.com/errata/RHSA-2026:34342</name></reference><reference><source>NPM Advisory reference: </source><url>https://access.redhat.com/errata/RHSA-2026:37272</url><name>https://access.redhat.com/errata/RHSA-2026:37272</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-96hv-2xvq-fx4p</url><name>https://github.com/advisories/GHSA-96hv-2xvq-fx4p</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:ws:\&gt;\=8.0.0\&lt;8.21.0:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability><vulnerability source="NPM"><name>GHSA-58qx-3vcg-4xpx</name><severity unscored="true">moderate</severity><cvssV3><baseScore>4.400000095367432</baseScore><attackVector>NETWORK</attackVector><attackComplexity>HIGH</attackComplexity><privilegesRequired>HIGH</privilegesRequired><userInteraction>NONE</userInteraction><scope>UNCHANGED</scope><confidentialityImpact>HIGH</confidentialityImpact><integrityImpact>NONE</integrityImpact><availabilityImpact>NONE</availabilityImpact><baseSeverity>MEDIUM</baseSeverity><version>3.1</version></cvssV3><cwes><cwe>CWE-908</cwe></cwes><description>### Impact
+
+The `websocket.close()` implementation is vulnerable to uninitialized memory disclosure when a `TypedArray` is passed as the reason argument.
+
+### Proof of concept
+
+```js
+import { deepStrictEqual } from &apos;node:assert&apos;;
+import { WebSocket, WebSocketServer } from &apos;ws&apos;;
+
+const wss = new WebSocketServer(
+  { port: 0, skipUTF8Validation: true },
+  function () {
+    const { port } = wss.address();
+    const ws = new WebSocket(`ws://localhost:${port}`, {
+      skipUTF8Validation: true
+    });
+
+    ws.on(&apos;close&apos;, function (code, reason) {
+      deepStrictEqual(reason, Buffer.alloc(80));
+    });
+  }
+);
+
+wss.on(&apos;connection&apos;, function (ws) {
+  ws.close(1000, new Float32Array(20));
+});
+```
+
+### Patches
+
+The vulnerability was fixed in ws@8.20.1 (https://github.com/websockets/ws/commit/c0327ec15a54d701eb6ccefaa8bef328cfc03086).
+
+### Credits
+
+Credit for the private and responsible disclosure of this issue goes to [Nikita Skovoroda](https://github.com/ChALkeR).
+
+### Remarks
+
+Although the calculated CVSS severity is medium, the actual severity is believed to be low, as the flaw is only exploitable through misuse that is unlikely in practice.
+
+### Resources
+
+- https://github.com/advisories/GHSA-58qx-3vcg-4xpx
+- https://www.cve.org/CVERecord?id=CVE-2026-45736</description><references><reference><source>NPM Advisory reference: </source><url>https://nvd.nist.gov/vuln/detail/CVE-2026-45736</url><name>https://nvd.nist.gov/vuln/detail/CVE-2026-45736</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/advisories/GHSA-58qx-3vcg-4xpx</url><name>https://github.com/advisories/GHSA-58qx-3vcg-4xpx</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/security/advisories/GHSA-58qx-3vcg-4xpx</url><name>https://github.com/websockets/ws/security/advisories/GHSA-58qx-3vcg-4xpx</name></reference><reference><source>NPM Advisory reference: </source><url>https://github.com/websockets/ws/commit/c0327ec15a54d701eb6ccefaa8bef328cfc03086</url><name>https://github.com/websockets/ws/commit/c0327ec15a54d701eb6ccefaa8bef328cfc03086</name></reference></references><vulnerableSoftware><software>cpe:2.3:a:*:ws:\&gt;\=8.0.0\&lt;8.20.1:*:*:*:*:*:*:*</software></vulnerableSoftware></vulnerability></vulnerabilities></dependency></dependencies></analysis>
