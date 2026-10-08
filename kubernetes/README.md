@@ -15,6 +15,19 @@ kubectl -n wanderlust create secret generic wanderlust-backend-secrets \
   --from-literal=REFRESH_TOKEN_EXPIRES_IN=7d
 ```
 
+The Deployment expects the Secret name `wanderlust-backend-secrets` in the
+`wanderlust` namespace. If you already maintain the values in a local environment
+file, create or update it with:
+
+```bash
+kubectl -n wanderlust create secret generic wanderlust-backend-secrets \
+  --from-env-file=backend/.env.docker \
+  --dry-run=client -o yaml | kubectl apply -f -
+```
+
+For production, use a managed secret integration such as External Secrets or a
+SealedSecret instead of committing a plain Secret manifest to Git.
+
 ### In this project, we will learn about how to deploy wanderlust application on Kubernetes.
 
 ### Pre-requisites to implement this project:

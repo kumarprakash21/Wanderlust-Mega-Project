@@ -4,4 +4,5 @@ backend/.env.docker
 frontend/.env
 frontend/.env.docker
 *.env
+# kubernetes/backend-secret.local.yaml
 *.log
