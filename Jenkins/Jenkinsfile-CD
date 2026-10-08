@@ -27,6 +27,10 @@ pipeline {
         stage('Verify: Docker Image Tags') {
             steps {
                 script{
+                    if (!(params.FRONTEND_DOCKER_TAG ==~ /^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/) ||
+                        !(params.BACKEND_DOCKER_TAG ==~ /^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/)) {
+                        error('Docker tags contain unsupported characters.')
+                    }
                     echo "FRONTEND_DOCKER_TAG: ${params.FRONTEND_DOCKER_TAG}"
                     echo "BACKEND_DOCKER_TAG: ${params.BACKEND_DOCKER_TAG}"
                 }
@@ -38,15 +42,11 @@ pipeline {
             steps{
                 script{
                     dir('kubernetes'){
-                        sh """
-                            sed -i -e s/wanderlust-backend.*/wanderlust-backend:${params.BACKEND_DOCKER_TAG}/g backend.yaml
-                        """
+                        sh "sed -i -E 's#(wanderlust-backend:)[^[:space:]]+#\\1${params.BACKEND_DOCKER_TAG}#' backend.yaml"
                     }
                     
                     dir('kubernetes'){
-                        sh """
-                            sed -i -e s/wanderlust-frontend.*/wanderlust-frontend:${params.FRONTEND_DOCKER_TAG}/g frontend.yaml
-                        """
+                        sh "sed -i -E 's#(wanderlust-frontend:)[^[:space:]]+#\\1${params.FRONTEND_DOCKER_TAG}#' frontend.yaml"
                     }
                     
                 }
@@ -68,7 +68,7 @@ pipeline {
                         git commit -m "Updated environment variables"
                         
                         echo "Pushing changes to github: "
-                        git push https://github.com/kumarprakash21/Wanderlust-Mega-Project.git main
+                        git push origin main
                     '''
                     }
                 }

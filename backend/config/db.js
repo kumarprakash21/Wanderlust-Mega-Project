@@ -11,11 +11,11 @@ export default async function connectDB() {
   const dbConnection = mongoose.connection;
 
   dbConnection.once('open', () => {
-    console.log(`Database connected: ${MONGODB_URI}`);
+    console.log('Database connected');
   });
 
   dbConnection.on('error', (err) => {
-    console.error(`connection error: ${MONGODB_URI}`);
+    console.error('Database connection error');
   });
   return dbConnection;
 }

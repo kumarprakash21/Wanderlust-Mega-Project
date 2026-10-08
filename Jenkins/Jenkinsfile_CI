@@ -52,6 +52,14 @@ pipeline {
                 }
             }
         }
+
+        stage("Dependency: Audit") {
+            steps {
+                sh 'npm audit --omit=dev --audit-level=high'
+                dir('backend') { sh 'npm audit --omit=dev --audit-level=high' }
+                dir('frontend') { sh 'npm audit --omit=dev --audit-level=high' }
+            }
+        }
         
         stage("SonarQube: Code Analysis"){
             steps{

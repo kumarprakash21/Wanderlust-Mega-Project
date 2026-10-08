@@ -24,7 +24,7 @@ export const createPostHandler = async (req, res) => {
     } = req.body;
 
     // Validation - check if all fields are filled
-    if (!title || !authorName || !imageLink || !description || !categories) {
+    if (!title || !authorName || !imageLink || !description || !Array.isArray(categories)) {
       return res
         .status(HTTP_STATUS.BAD_REQUEST)
         .json({ message: RESPONSE_MESSAGES.COMMON.REQUIRED_FIELDS });
@@ -41,7 +41,7 @@ export const createPostHandler = async (req, res) => {
     }
 
     // Validation - check if categories array has more than 3 items
-    if (categories.length > 3) {
+    if (categories.length === 0 || categories.length > 3 || categories.some(category => !validCategories.includes(category))) {
       return res
         .status(HTTP_STATUS.BAD_REQUEST)
         .json({ message: RESPONSE_MESSAGES.POSTS.MAX_CATEGORIES });
@@ -129,7 +129,9 @@ export const getPostByIdHandler = async (req, res) => {
 
 export const updatePostHandler = async (req, res) => {
   try {
-    const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {
+    const allowedFields = ['title', 'authorName', 'imageLink', 'categories', 'description', 'isFeaturedPost'];
+    const updates = Object.fromEntries(Object.entries(req.body).filter(([key]) => allowedFields.includes(key)));
+    const updatedPost = await Post.findByIdAndUpdate(req.params.id, updates, {
       new: true,
       runValidators: true,
     });

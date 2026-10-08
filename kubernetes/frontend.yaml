@@ -16,11 +16,20 @@ spec:
       labels:
         app: frontend
     spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: frontend
           image: prakashgautam1998/wanderlust-frontend:1.4
           ports:
             - containerPort: 5173
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+            readOnlyRootFilesystem: true
 ---
 apiVersion: v1
 kind: Service

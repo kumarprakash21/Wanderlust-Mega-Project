@@ -1,5 +1,20 @@
 # Wanderlust Deployment on Kubernetes
 
+Create the backend secret out of band before deploying the backend. Do not commit the
+resulting YAML or secret values:
+
+```bash
+kubectl -n wanderlust create secret generic wanderlust-backend-secrets \
+  --from-literal=MONGODB_URI='mongodb://mongo-service/wanderlust' \
+  --from-literal=REDIS_URL='redis://redis-service:6379' \
+  --from-literal=JWT_SECRET="$(openssl rand -base64 48)" \
+  --from-literal=FRONTEND_URL='https://your-frontend.example' \
+  --from-literal=PORT=8080 \
+  --from-literal=NODE_ENV=production \
+  --from-literal=ACCESS_TOKEN_EXPIRES_IN=15m \
+  --from-literal=REFRESH_TOKEN_EXPIRES_IN=7d
+```
+
 ### In this project, we will learn about how to deploy wanderlust application on Kubernetes.
 
 ### Pre-requisites to implement this project:
@@ -189,4 +204,3 @@ http://<your-workernode-publicip>:31000/
 ![App](https://github.com/DevMadhup/wanderlust/blob/devops/kubernetes/assets/app.png)
 
 #
-

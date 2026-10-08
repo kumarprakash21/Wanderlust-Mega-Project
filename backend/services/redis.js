@@ -10,7 +10,7 @@ export async function connectToRedis() {
         url: REDIS_URL,
         disableOfflineQueue: true,
       }).connect();
-      console.log('Redis Connected: ' + REDIS_URL);
+      console.log('Redis connected');
     } else {
       console.log('Redis not configured, cache disabled.');
     }

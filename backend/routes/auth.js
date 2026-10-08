@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { authRateLimit } from '../utils/middleware.js';
 const router = Router();
 import {
   signUpWithEmail,
@@ -23,8 +24,8 @@ router.get('/github/signup/callback', signUpWithGithub);
 router.get('/github/signin/callback', signInWithGithub);
 
 //REGULAR EMAIL PASSWORD STRATEGY
-router.post('/email-password/signup', signUpWithEmail);
-router.post('/email-password/signin', signInWithEmail);
+router.post('/email-password/signup', authRateLimit, signUpWithEmail);
+router.post('/email-password/signin', authRateLimit, signInWithEmail);
 
 //SIGN OUT
 router.post('/signout', signOutUser);
