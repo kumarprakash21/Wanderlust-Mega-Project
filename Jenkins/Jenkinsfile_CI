@@ -46,9 +46,15 @@ pipeline {
 
         stage("Dependency: Audit") {
             steps {
-                sh 'npm audit --omit=dev --audit-level=high'
-                dir('backend') { sh 'npm audit --omit=dev --audit-level=high' }
-                dir('frontend') { sh 'npm audit --omit=dev --audit-level=high' }
+                sh '''
+                    docker run --rm \
+                      -v "$WORKSPACE:/workspace" \
+                      -w /workspace \
+                      node:22-bookworm-slim \
+                      sh -c 'npm audit --omit=dev --audit-level=high && \
+                             cd backend && npm audit --omit=dev --audit-level=high && \
+                             cd ../frontend && npm audit --omit=dev --audit-level=high'
+                '''
             }
         }
         
