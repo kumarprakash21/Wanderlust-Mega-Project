@@ -24,6 +24,15 @@ pipeline {
                         returnStdout: true
                     ).trim()
                     echo "Generated image tag: ${env.IMAGE_TAG}"
+
+                    def commitMessage = sh(
+                        script: 'git log -1 --pretty=%B',
+                        returnStdout: true
+                    ).trim()
+                    if (commitMessage.contains('[skip ci]')) {
+                        currentBuild.result = 'NOT_BUILT'
+                        error('Skipping CI for an automated deployment commit.')
+                    }
                 }
             }
         }

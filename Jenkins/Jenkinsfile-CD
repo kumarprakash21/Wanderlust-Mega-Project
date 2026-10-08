@@ -89,7 +89,7 @@ pipeline {
                         git add .
                         
                         echo "Commiting changes: "
-                        git commit -m "Updated environment variables"
+                        git commit -m "chore(deploy): update image tag [skip ci]"
                         
                         echo "Pushing changes to github: "
                         git push origin main
