@@ -2,10 +2,31 @@ import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
+import crypto from 'crypto';
 import { HTTP_STATUS, RESPONSE_MESSAGES } from '../utils/constants.js';
 import { accessCookieOptions, refreshCookieOptions } from '../utils/cookie_options.js';
 const { hash, compareSync } = bcrypt;
 const { sign } = jwt;
+
+const createOAuthState = (res, provider) => {
+  const state = `${provider}:${crypto.randomBytes(24).toString('hex')}`;
+  res.cookie('oauth_state', state, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: 10 * 60 * 1000,
+  });
+  return state;
+};
+
+const validateOAuthState = (req, res) => {
+  if (!req.cookies?.oauth_state || req.cookies.oauth_state !== req.query.state) {
+    res.status(HTTP_STATUS.BAD_REQUEST).json({ success: false, message: 'Invalid OAuth state.' });
+    return false;
+  }
+  res.clearCookie('oauth_state');
+  return true;
+};
 
 //REGULAR EMAIL PASSWORD STRATEGY
 //1.Sign Up
@@ -13,18 +34,22 @@ export const signUpWithEmail = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email || !password) {
-      throw new Error('All fields are required.');
+      const error = new Error('All fields are required.');
+      error.status = HTTP_STATUS.BAD_REQUEST;
+      throw error;
     }
     const isExisitsUser = await User.findOne({ email });
     if (isExisitsUser) {
-      throw new Error('User already exists.');
+      const error = new Error('User already exists.');
+      error.status = 409;
+      throw error;
     }
     const hashedPassword = await hash(password, 10);
     const newUser = await User.create({ name, email, password: hashedPassword });
-    const accessToken = sign({ name, _id: newUser._id }, process.env.JWT_SECRET, {
+    const accessToken = sign({ name, _id: newUser._id, role: newUser.role }, process.env.JWT_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     });
-    const refreshToken = sign({ name, _id: newUser._id }, process.env.JWT_SECRET, {
+    const refreshToken = sign({ name, _id: newUser._id, role: newUser.role }, process.env.JWT_SECRET, {
       expiresIn: process.env.REFRESH_TOKEN_EXPIRES_IN,
     });
     res.cookie('access_token', accessToken, accessCookieOptions);
@@ -36,11 +61,9 @@ export const signUpWithEmail = async (req, res, next) => {
         name: name,
         id: newUser._id,
       },
-      accessToken,
-      refreshToken,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
@@ -52,24 +75,28 @@ export const signInWithEmail = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
-      throw new Error('Both email and password are required');
+      const error = new Error('Both email and password are required');
+      error.status = HTTP_STATUS.BAD_REQUEST;
+      throw error;
     }
     const isUserExists = await User.findOne({ email });
     if (!isUserExists) {
-      throw new Error('Email does not exist');
+      const error = new Error('Email does not exist');
+      error.status = HTTP_STATUS.UNAUTHORIZED;
+      throw error;
     }
     let accessToken;
     let refreshToken;
     if (isUserExists && compareSync(password, isUserExists.password)) {
       accessToken = sign(
-        { name: isUserExists.name, _id: isUserExists._id },
+        { name: isUserExists.name, _id: isUserExists._id, role: isUserExists.role },
         process.env.JWT_SECRET,
         {
           expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
         }
       );
       refreshToken = sign(
-        { name: isUserExists.name, _id: isUserExists._id },
+        { name: isUserExists.name, _id: isUserExists._id, role: isUserExists.role },
         process.env.JWT_SECRET,
         {
           expiresIn: process.env.REFRESH_TOKEN_EXPIRES_IN,
@@ -78,7 +105,9 @@ export const signInWithEmail = async (req, res, next) => {
       res.cookie('access_token', accessToken, accessCookieOptions);
       res.cookie('refresh_token', refreshToken, refreshCookieOptions);
     } else {
-      throw new Error('Invalid password');
+      const error = new Error('Invalid password');
+      error.status = HTTP_STATUS.UNAUTHORIZED;
+      throw error;
     }
     res.status(HTTP_STATUS.OK).json({
       success: true,
@@ -86,12 +115,10 @@ export const signInWithEmail = async (req, res, next) => {
         name: isUserExists.name,
         _id: isUserExists._id,
       },
-      accessToken,
-      refreshToken,
       message: RESPONSE_MESSAGES.USERS.SIGNED_IN,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
@@ -105,7 +132,7 @@ export const openGoogleAuthWindow = (req, res, next) => {
   const params = new URLSearchParams({
     client_id: process.env.GAUTH_CLIENT_ID,
     redirect_uri: process.env.REDIRECTION_URL,
-    state: 'google-auth-provider',
+    state: createOAuthState(res, 'google'),
     scope: 'profile email',
     response_type: 'code',
   });
@@ -117,11 +144,12 @@ export const openGoogleAuthWindow = (req, res, next) => {
 export const signUpWithGoogle = async (req, res, next) => {
   const code = req.query.code;
   if (!code) {
-    res.status(HTTP_STATUS.BAD_REQUEST).json({
+    return res.status(HTTP_STATUS.BAD_REQUEST).json({
       success: false,
       message: RESPONSE_MESSAGES.USERS.CODE_NOT_FOUND,
     });
   }
+  if (!validateOAuthState(req, res)) return;
   const tokenUrl = process.env.GAUTH_TOKEN_URL;
   try {
     const tokenResponse = await axios.post(
@@ -149,7 +177,7 @@ export const signUpWithGoogle = async (req, res, next) => {
       name,
       email,
     });
-    const payload = { name, _id: newUser._id };
+    const payload = { name, _id: newUser._id, role: newUser.role };
     const accessToken = sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     });
@@ -165,11 +193,9 @@ export const signUpWithGoogle = async (req, res, next) => {
         name: name,
         id: newUser._id,
       },
-      accessToken,
-      refreshToken,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
@@ -180,11 +206,12 @@ export const signUpWithGoogle = async (req, res, next) => {
 export const signInWithGoogle = async (req, res, next) => {
   const code = req.query.code;
   if (!code) {
-    res.status(HTTP_STATUS.BAD_REQUEST).json({
+    return res.status(HTTP_STATUS.BAD_REQUEST).json({
       success: false,
       message: RESPONSE_MESSAGES.USERS.CODE_NOT_FOUND,
     });
   }
+  if (!validateOAuthState(req, res)) return;
   const tokenUrl = process.env.GAUTH_TOKEN_URL;
   try {
     const tokenResponse = await axios.post(
@@ -208,7 +235,7 @@ export const signInWithGoogle = async (req, res, next) => {
     if (!isUserExists) {
       throw new Error(RESPONSE_MESSAGES.USERS.USER_NOT_EXISTS);
     }
-    const payload = { name, _id: isUserExists._id };
+    const payload = { name, _id: isUserExists._id, role: isUserExists.role };
     const accessToken = sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     });
@@ -225,11 +252,9 @@ export const signInWithGoogle = async (req, res, next) => {
         name: name,
         id: isUserExists._id,
       },
-      accessToken,
-      refreshToken,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
@@ -243,7 +268,7 @@ export const openGithubAuthWindow = (req, res, next) => {
   const params = new URLSearchParams({
     client_id: process.env.GITHUB_CLIENT_ID,
     redirect_uri: process.env.REDIRECTION_URL,
-    state: 'github-auth-provider',
+    state: createOAuthState(res, 'github'),
     scope: 'user:read user:email',
     response_type: 'code',
   });
@@ -255,11 +280,12 @@ export const openGithubAuthWindow = (req, res, next) => {
 export const signUpWithGithub = async (req, res, next) => {
   const code = req.query.code;
   if (!code) {
-    res.status(HTTP_STATUS.BAD_REQUEST).json({
+    return res.status(HTTP_STATUS.BAD_REQUEST).json({
       success: false,
       message: RESPONSE_MESSAGES.USERS.CODE_NOT_FOUND,
     });
   }
+  if (!validateOAuthState(req, res)) return;
   const tokenUrl = process.env.GITHUB_TOKEN_URL;
   try {
     const tokenResponse = await axios.post(
@@ -288,7 +314,7 @@ export const signUpWithGithub = async (req, res, next) => {
       name,
       email,
     });
-    const payload = { name, _id: newUser._id };
+    const payload = { name, _id: newUser._id, role: newUser.role };
     const accessToken = sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     });
@@ -305,11 +331,9 @@ export const signUpWithGithub = async (req, res, next) => {
         name,
         id: newUser._id,
       },
-      accessToken,
-      refreshToken,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
@@ -320,11 +344,12 @@ export const signUpWithGithub = async (req, res, next) => {
 export const signInWithGithub = async (req, res, next) => {
   const code = req.query.code;
   if (!code) {
-    res.status(HTTP_STATUS.BAD_REQUEST).json({
+    return res.status(HTTP_STATUS.BAD_REQUEST).json({
       success: false,
       message: RESPONSE_MESSAGES.USERS.CODE_NOT_FOUND,
     });
   }
+  if (!validateOAuthState(req, res)) return;
   const tokenUrl = process.env.GITHUB_TOKEN_URL;
   try {
     const tokenResponse = await axios.post(
@@ -346,7 +371,7 @@ export const signInWithGithub = async (req, res, next) => {
     if (!isUserExists) {
       throw new Error(RESPONSE_MESSAGES.USERS.USER_NOT_EXISTS);
     }
-    const payload = { name, _id: isUserExists._id };
+    const payload = { name, _id: isUserExists._id, role: isUserExists.role };
     const accessToken = sign(payload, process.env.JWT_SECRET, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     });
@@ -363,11 +388,9 @@ export const signInWithGithub = async (req, res, next) => {
         name,
         id: isUserExists._id,
       },
-      accessToken,
-      refreshToken,
     });
   } catch (error) {
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+    res.status(error.status || HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: error.message,
     });
