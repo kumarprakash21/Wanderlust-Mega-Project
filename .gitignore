@@ -1,8 +1,8 @@
 node_modules/
-backend/.env
-backend/.env.docker
-frontend/.env
-frontend/.env.docker
-*.env
+# backend/.env
+# backend/.env.docker
+# frontend/.env
+# frontend/.env.docker
+# *.env
 # kubernetes/backend-secret.local.yaml
 *.log
