@@ -18,6 +18,36 @@ pipeline {
                 }
             }
         }
+
+        stage("Trivy: Filesystem scan") {
+            steps {
+                script {
+                    trivy_scan()
+                }
+            }
+        }
+
+        stage("OWASP: Dependency check") {
+            steps {
+                script {
+                    owasp_dependency()
+                }
+            }
+        }
+
+        stage("Dependency: Audit") {
+            steps {
+                sh '''
+                    docker run --rm \
+                      -v "$WORKSPACE:/workspace" \
+                      -w /workspace \
+                      node:22-bookworm-slim \
+                      sh -c 'npm audit --omit=dev --audit-level=high && \
+                             cd backend && npm audit --omit=dev --audit-level=high && \
+                             cd ../frontend && npm audit --omit=dev --audit-level=high'
+                '''
+            }
+        }
         
         stage('Generate: Docker Image Tag') {
             steps {
