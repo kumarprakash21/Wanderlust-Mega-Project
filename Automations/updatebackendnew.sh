@@ -1,22 +1,24 @@
 #!/bin/bash
+set -euo pipefail
 
 # Set the Instance ID and path to the .env file
 INSTANCE_ID="i-097932daab6262922"
 
-# Retrieve the public IP address of the specified EC2 instance
-ipv4_address=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
-
 # Path to the .env file
 file_to_find="../backend/.env.docker"
 
-# Check the current FRONTEND_URL in the .env file
-current_url=$(sed -n "4p" $file_to_find)
+# Retrieve the public DNS name of the specified EC2 instance
+public_dns=$(aws ec2 describe-instances \
+    --instance-ids "$INSTANCE_ID" \
+    --query 'Reservations[0].Instances[0].PublicDnsName' \
+    --output text)
 
-# Update the .env file if the IP address has changed
-if [[ "$current_url" != "FRONTEND_URL=\"http://${ipv4_address}:5173\"" ]]; then
-    if [ -f $file_to_find ]; then
-        sed -i -e "s|FRONTEND_URL.*|FRONTEND_URL=\"http://${ipv4_address}:5173\"|g" $file_to_find
-    else
-        echo "ERROR: File not found."
-    fi
+if [ ! -f "$file_to_find" ]; then
+    echo "ERROR: File not found: $file_to_find"
+    exit 1
 fi
+
+# The frontend is exposed through Kubernetes NodePort 31000.
+sed -i \
+    -e "s|^FRONTEND_URL=.*|FRONTEND_URL=http://${public_dns}:31000|" \
+    "$file_to_find"

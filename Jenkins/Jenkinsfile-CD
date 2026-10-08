@@ -1,6 +1,14 @@
 @Library('shared') _
 pipeline {
     agent any
+
+    parameters {
+        string(
+            name: 'IMAGE_TAG',
+            defaultValue: '',
+            description: 'Image tag published by the CI pipeline'
+        )
+    }
     
     stages {
         stage("Workspace cleanup"){
@@ -53,9 +61,16 @@ pipeline {
             steps {
                 script{
                     def upstreamCauses = currentBuild.getBuildCauses('hudson.model.Cause$UpstreamCause')
-                    env.IMAGE_TAG = upstreamCauses
-                        ? upstreamCauses[0].upstreamBuild.toString()
-                        : env.BUILD_NUMBER
+                    def upstreamTag = upstreamCauses
+                        ? upstreamCauses[0].upstreamBuild.number.toString()
+                        : ''
+
+                    env.IMAGE_TAG = params.IMAGE_TAG?.trim() ?: upstreamTag
+
+                    if (!env.IMAGE_TAG) {
+                        error('No CI image tag was provided; refusing to update Kubernetes manifests')
+                    }
+
                     echo "Using generated image tag: ${env.IMAGE_TAG}"
                 }
             }

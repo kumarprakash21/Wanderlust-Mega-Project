@@ -135,7 +135,9 @@ pipeline {
                          allowEmptyArchive: true,
                          followSymlinks: false
 
-        build job: 'Wanderlust-CD', wait: false
+        build job: 'Wanderlust-CD',
+              parameters: [string(name: 'IMAGE_TAG', value: env.IMAGE_TAG)],
+              wait: false
 
         emailext(
             attachLog: false,
