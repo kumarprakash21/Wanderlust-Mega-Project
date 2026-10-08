@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: frontend
-          image: prakashgautam1998/wanderlust-frontend:23
+          image: prakashgautam1998/wanderlust-frontend:24
           ports:
             - containerPort: 5173
           securityContext:
