@@ -18,13 +18,16 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis:7.2-alpine
+          image: redis
           ports:
             - containerPort: 6379
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              drop: ["ALL"]
+          volumeMounts:
+            - name: mongo-storage
+              mountPath: /var/lib/redis/dump.rdb
+      volumes:
+        - name: mongo-storage
+          persistentVolumeClaim:
+            claimName: mongo-pvc
 ---
 apiVersion: v1
 kind: Service
