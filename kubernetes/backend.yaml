@@ -22,10 +22,10 @@ spec:
           type: RuntimeDefault
       containers:
         - name: backend
-          image: prakashgautam1998/wanderlust-backend:32e0fd5aa5d9
+          image: prakashgautam1998/wanderlust-backend:23
           envFrom:
             - secretRef:
-                name: wanderlust-backend:32e0fd5aa5d9
+                name: wanderlust-backend:23
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
