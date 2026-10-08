@@ -2,11 +2,6 @@
 pipeline {
     agent any
     
-    parameters {
-        string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Frontend Docker tag of the image built by the CI job')
-        string(name: 'BACKEND_DOCKER_TAG', defaultValue: '', description: 'Backend Docker tag of the image built by the CI job')
-    }
-
     stages {
         stage("Workspace cleanup"){
             steps{
@@ -24,15 +19,14 @@ pipeline {
             }
         }
         
-        stage('Verify: Docker Image Tags') {
+        stage('Generate: Docker Image Tag') {
             steps {
                 script{
-                    if (!(params.FRONTEND_DOCKER_TAG ==~ /^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/) ||
-                        !(params.BACKEND_DOCKER_TAG ==~ /^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/)) {
-                        error('Docker tags contain unsupported characters.')
-                    }
-                    echo "FRONTEND_DOCKER_TAG: ${params.FRONTEND_DOCKER_TAG}"
-                    echo "BACKEND_DOCKER_TAG: ${params.BACKEND_DOCKER_TAG}"
+                    env.IMAGE_TAG = sh(
+                        script: 'git rev-parse --short=12 HEAD',
+                        returnStdout: true
+                    ).trim()
+                    echo "Using generated image tag: ${env.IMAGE_TAG}"
                 }
             }
         }
@@ -42,11 +36,11 @@ pipeline {
             steps{
                 script{
                     dir('kubernetes'){
-                        sh "sed -i -E 's#(wanderlust-backend:)[^[:space:]]+#\\1${params.BACKEND_DOCKER_TAG}#' backend.yaml"
+                        sh "sed -i -E 's#(wanderlust-backend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' backend.yaml"
                     }
                     
                     dir('kubernetes'){
-                        sh "sed -i -E 's#(wanderlust-frontend:)[^[:space:]]+#\\1${params.FRONTEND_DOCKER_TAG}#' frontend.yaml"
+                        sh "sed -i -E 's#(wanderlust-frontend:)[^[:space:]]+#\\1${env.IMAGE_TAG}#' frontend.yaml"
                     }
                     
                 }
@@ -78,45 +72,42 @@ pipeline {
   post {
         success {
             script {
-                emailext attachLog: true,
+                emailext attachLog: false,
                 from: 'prakashgautam2312@gmail.com',
-                subject: "Wanderlust Application has been updated and deployed - '${currentBuild.result}'",
+                subject: "✅ Deployment completed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-                    <html>
-                    <body>
-                        <div style="background-color: #FFA07A; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: black; font-weight: bold;">Project: ${env.JOB_NAME}</p>
-                        </div>
-                        <div style="background-color: #90EE90; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: black; font-weight: bold;">Build Number: ${env.BUILD_NUMBER}</p>
-                        </div>
-                        <div style="background-color: #87CEEB; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: black; font-weight: bold;">URL: ${env.BUILD_URL}</p>
-                        </div>
-                    </body>
-                    </html>
-            """,
+                    <div style="font-family:Arial,sans-serif;max-width:640px;color:#243047">
+                      <h2 style="color:#16803c">Deployment completed successfully</h2>
+                      <p>Kubernetes manifests were updated and pushed to the main branch.</p>
+                      <table cellpadding="7" style="border-collapse:collapse">
+                        <tr><td><b>Project</b></td><td>${env.JOB_NAME}</td></tr>
+                        <tr><td><b>Build</b></td><td>#${env.BUILD_NUMBER}</td></tr>
+                        <tr><td><b>Image tag</b></td><td><code>${env.IMAGE_TAG}</code></td></tr>
+                        <tr><td><b>Duration</b></td><td>${currentBuild.durationString}</td></tr>
+                      </table>
+                      <p><a href="${env.BUILD_URL}">Open deployment details</a></p>
+                    </div>
+                """,
             to: 'prakashgautam2312@gmail.com',
             mimeType: 'text/html'
             }
         }
-      failure {
+        failure {
             script {
                 emailext attachLog: true,
                 from: 'prakashgautam2312@gmail.com',
-                subject: "Wanderlust Application build failed - '${currentBuild.result}'",
+                subject: "❌ Deployment failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-                    <html>
-                    <body>
-                        <div style="background-color: #FFA07A; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: black; font-weight: bold;">Project: ${env.JOB_NAME}</p>
-                        </div>
-                        <div style="background-color: #90EE90; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: black; font-weight: bold;">Build Number: ${env.BUILD_NUMBER}</p>
-                        </div>
-                    </body>
-                    </html>
-            """,
+                    <div style="font-family:Arial,sans-serif;max-width:640px;color:#243047">
+                      <h2 style="color:#b42318">Deployment failed</h2>
+                      <p>The Kubernetes manifest update or Git push failed. The console log is attached for investigation.</p>
+                      <p><b>Project:</b> ${env.JOB_NAME}<br>
+                         <b>Build:</b> #${env.BUILD_NUMBER}<br>
+                         <b>Image tag:</b> <code>${env.IMAGE_TAG ?: 'not generated'}</code><br>
+                         <b>Duration:</b> ${currentBuild.durationString}</p>
+                      <p><a href="${env.BUILD_URL}console">Open console log</a></p>
+                    </div>
+                """,
             to: 'prakashgautam2312@gmail.com',
             mimeType: 'text/html'
             }
