@@ -71,19 +71,31 @@ function AddBlog() {
     setFormData({ ...formData, isFeaturedPost: !formData.isFeaturedPost });
   };
   const validateFormData = () => {
-    if (
-      !formData.title ||
-      !formData.authorName ||
-      !formData.imageLink ||
-      !formData.description ||
-      formData.categories.length === 0
-    ) {
-      toast.error('All fields must be filled out.');
+    if (!formData.title.trim()) {
+      toast.error('Please enter a blog title.');
       return false;
     }
-    const imageLinkRegex = /\.(jpg|jpeg|png|webp)$/i;
-    if (!imageLinkRegex.test(formData.imageLink)) {
-      toast.error('Image URL must end with .jpg, .jpeg, .webp or .png');
+    if (!formData.description.trim()) {
+      toast.error('Please enter blog content.');
+      return false;
+    }
+    if (!formData.authorName.trim()) {
+      toast.error('Please enter an author name.');
+      return false;
+    }
+    if (!formData.imageLink.trim()) {
+      toast.error('Please choose or enter a cover image.');
+      return false;
+    }
+    if (formData.categories.length === 0) {
+      toast.error('Please choose at least one category.');
+      return false;
+    }
+    try {
+      const imageUrl = new URL(formData.imageLink);
+      if (!['http:', 'https:'].includes(imageUrl.protocol)) throw new Error();
+    } catch {
+      toast.error('Please enter a valid image URL.');
       return false;
     }
     if (formData.categories.length > 3) {
@@ -106,7 +118,14 @@ function AddBlog() {
           toast.error('Error: ' + response.data.message);
         }
       } catch (err: any) {
-        toast.error('Error: ' + err.message);
+        if (err.response?.status === 401) {
+          toast.error('Please sign in before posting.');
+          navigate('/signin');
+        } else if (err.response?.status === 403) {
+          toast.error('You do not have permission to post.');
+        } else {
+          toast.error(err.response?.data?.message ?? 'Unable to create the post.');
+        }
       }
     }
   };

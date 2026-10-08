@@ -22,7 +22,7 @@ const ModalComponent: React.FC<ModalProps> = ({
           className="relative z-10"
           aria-labelledby="modal-title"
           role="dialog"
-          aria-modal="false"
+          aria-modal="true"
         >
           <div className="fixed inset-0 bg-slate-800/50 bg-opacity-75 transition-opacity"></div>
 
@@ -52,7 +52,7 @@ const ModalComponent: React.FC<ModalProps> = ({
                             >
                               <img
                                 src={imageUrl}
-                                alt={`Image ${imageUrl}`}
+                                alt="Sample blog cover"
                                 className="h-full w-full object-cover"
                               />
                             </div>
@@ -68,6 +68,7 @@ const ModalComponent: React.FC<ModalProps> = ({
                     name="imageLink"
                     className="active:scale-click inline-flex w-full justify-center rounded-md bg-light-primary px-3 py-2 text-sm font-semibold text-light shadow-sm hover:bg-light-secondary dark:bg-dark-primary dark:text-dark dark:hover:bg-dark-secondary sm:ml-3 sm:w-auto"
                     onClick={handleSelector}
+                    disabled={!selectedImage}
                   >
                     Select
                   </button>

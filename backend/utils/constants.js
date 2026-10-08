@@ -26,7 +26,7 @@ export const RESPONSE_MESSAGES = {
     NOT_FOUND: 'Post not found',
     INVALID_CATEGORY: 'Invalid category',
     MAX_CATEGORIES: 'Please select up to three categories only',
-    INVALID_IMAGE_URL: 'Image URL must end with .jpg, .jpeg, .webp, or .png',
+    INVALID_IMAGE_URL: 'Image URL must be a valid HTTP or HTTPS URL',
   },
   USERS: {
     SIGNED_UP: 'New user created',

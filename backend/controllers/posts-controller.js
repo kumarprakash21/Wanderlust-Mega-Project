@@ -31,8 +31,10 @@ export const createPostHandler = async (req, res) => {
     }
 
     // Validation - check if imageLink is a valid URL
-    const imageLinkRegex = /\.(jpg|jpeg|png|webp)$/i;
-    if (!imageLinkRegex.test(imageLink)) {
+    try {
+      const imageUrl = new URL(imageLink);
+      if (!['http:', 'https:'].includes(imageUrl.protocol)) throw new Error();
+    } catch {
       return res
         .status(HTTP_STATUS.BAD_REQUEST)
         .json({ message: RESPONSE_MESSAGES.POSTS.INVALID_IMAGE_URL });

@@ -7,6 +7,7 @@ import { TSignUpSchema, signUpSchema } from '@/lib/types';
 import 'react-toastify/dist/ReactToastify.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 function signin() {
   const navigate = useNavigate();
@@ -19,16 +20,18 @@ function signin() {
   } = useForm<TSignUpSchema>({ resolver: zodResolver(signUpSchema) });
 
   const onSubmit = async (data: FieldValues) => {
-    if (data.email === 'abc@gamil.com') {
-      toast.error('Submitting form is failed');
-      return;
+    try {
+      await axios.post(`${import.meta.env.VITE_API_PATH}/api/auth/email-password/signup`, {
+        name: data.username,
+        email: data.email,
+        password: data.password,
+      });
+      reset();
+      toast.success('Account created successfully.');
+      navigate('/');
+    } catch (error: any) {
+      toast.error(error.response?.data?.message ?? 'Unable to create account.');
     }
-
-    // TODO: Server-side validation
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    reset();
-    navigate('/');
   };
 
   return (
@@ -110,21 +113,21 @@ function signin() {
           <span>OR</span>
         </div>
 
-        <Link
-          to={'/google-auth'}
+        <a
+          href={`${import.meta.env.VITE_API_PATH}/api/auth/google`}
           className="flex w-full items-center justify-center space-x-2 rounded-lg border-2 border-b-4  border-gray-300 p-3 text-center hover:bg-gray-50 md:w-3/4 lg:w-2/5"
         >
           <img className="h-4 w-6 pl-1 sm:h-5 sm:w-10" src={AddGoogleIcon} />
           <span className="text-sm sm:text-base">Continue with Google</span>
-        </Link>
+        </a>
 
-        <Link
-          to={'/github-auth'}
+        <a
+          href={`${import.meta.env.VITE_API_PATH}/api/auth/github`}
           className="flex w-full items-center justify-center space-x-2 rounded-lg border-2 border-b-4 border-gray-300 p-3 text-center hover:bg-gray-50 md:w-3/4 lg:w-2/5"
         >
           <img className="h-4 w-6 sm:h-5 sm:w-10" src={AddGithubIcon} />
           <span className="text-sm sm:text-base">Continue with Github</span>
-        </Link>
+        </a>
       </div>
     </div>
   );
